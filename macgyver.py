@@ -22,9 +22,9 @@ pygame.display.set_icon(icon)
 #Titre
 pygame.display.set_caption(constants.Title)
 
-labyrinth = labyrinth.my_lab.show
+labyrinth = labyrinth.my_lab
 #Main loop
-game_loop = 1
+game_loop = True
 
 while game_loop:	
 	#Home screen
