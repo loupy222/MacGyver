@@ -24,22 +24,24 @@ class Labyrinth:
         This method is to display the game board
         """
         wall_picture = pygame.image.load(constants.wall).convert()
+        guardian_picture = pygame.image.load(constants.guardian).convert()
         # To display the structure of labyrinth
         for x, line in enumerate(self.structure):
             for y, letter in enumerate(line):
                 position = position(x, y)
                 if self.structure[x][y] == "w":
                     window.blit(wall_picture, (position.pixels_x, position.pixels_y))
-
+                elif self.structure[x][y] == "G":
+                    window.blit(guardian_picture,(position.pixels_x, position.pixels_y))
     # take randomly a free space from the structure []
 
     def rand_free_tile(self):
         rand_line = random.choice(self.structure)
         rand_free_tile = random.choice(rand_line)
-        if rand_free_tile != "w, M, G, T, S, P":
+        if rand_free_tile == "w":
             random.choice(rand_line)
-        """return rand_free_tile"""
 
 my_lab = Labyrinth()
 
 pprint.pprint(my_lab.structure)
+my_lab.rand_free_tile()

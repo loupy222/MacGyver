@@ -21,6 +21,7 @@ home_pic = "pics/home.jpg"
 wall = "pics/wall.png"
 back_img = "pics/back.jpg"
 Mac = "pîcs/macgyver.png"
+guardian = "pics/Guardian.png"
 
 """Sentences"""
 
