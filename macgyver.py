@@ -8,7 +8,8 @@ Script Python
 """
 
 import pygame
-import classes
+import labyrinth
+import character
 import constants
 
 pygame.init()
@@ -21,7 +22,7 @@ pygame.display.set_icon(icon)
 #Titre
 pygame.display.set_caption(constants.Title)
 
-labyrinth = classes.my_lab.show
+labyrinth = labyrinth.my_lab.show
 #Main loop
 game_loop = 1
 

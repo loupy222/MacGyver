@@ -1,3 +1,5 @@
+import constants
+
 class character:
 
     def __init__(self):
