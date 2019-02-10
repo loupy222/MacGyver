@@ -43,12 +43,13 @@ while game_loop:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				game_loop = False
+				g_home = False
+
 			elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE: 
 				game_loop = False
 				g_home = False
 				g_continue = False
-				
-			
+						
 			elif event.type == pygame.K_UP and event.key == pygame.K_ENTER:				
 				g_home = False	#On quitte l'accueil
 				g_continue = True
@@ -61,7 +62,7 @@ while game_loop:
 		window.blit(back_img, (0,0))
 		labyrinth(window)		
 		#Création de Macgyver
-		Mac = classes.Mac
+		Mac = character.Mac
 				
 	#Game loop
 	while g_continue:
@@ -97,5 +98,5 @@ while game_loop:
 		pygame.display.flip()
 
 		#Victoire -> Retour à l'accueil
-		if classes.my_lab.structure[Mac.case_y][Mac.case_x] == 'G':
+		if labyrinth.my_lab.structure[Mac.case_y][Mac.case_x] == 'G':
 			game_loop = False

@@ -43,7 +43,7 @@ class Labyrinth:
 my_lab = Labyrinth()
 
 pprint.pprint(my_lab.show)
-"""
+
 class character:
 
     def __init__(self):
@@ -78,4 +78,4 @@ class character:
                 self.case_y += 1
                 self.y = self.case_y * constants.sprite_size
 
-Mac = character()"""
+Mac = character()
