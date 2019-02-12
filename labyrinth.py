@@ -36,10 +36,15 @@ class Labyrinth:
     # take randomly a free space from the structure []
 
     def rand_free_tile(self):
-        rand_line = random.choice(self.structure)
-        rand_free_tile = random.choice(rand_line)
-        if rand_free_tile == "w":
-            random.choice(rand_line)
+        rand_line = random.randint(0, len(self.structure) -1)
+        print (rand_line)
+        rand_tile = random.randint(0, len (self.structure[rand_line]) -1)
+        print (rand_tile)
+        rand_free_tile = self.structure[rand_line][rand_tile]
+        while rand_free_tile != "0":
+            rand_free_tile = self.structure[rand_line][rand_tile]
+         
+        print (rand_free_tile)
 
 my_lab = Labyrinth()
 
