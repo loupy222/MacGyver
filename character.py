@@ -1,4 +1,5 @@
 import constants
+import labyrinth
 
 class character:
 
@@ -7,7 +8,7 @@ class character:
         self.case_y = 0
         self.x = 0
         self.y = 0
-        self.structure = my_lab.structure
+        self.structure = labyrinth.my_lab.structure
     
     def moove(self, direction):
 

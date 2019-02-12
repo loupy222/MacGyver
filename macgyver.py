@@ -11,8 +11,11 @@ import pygame
 import labyrinth
 import character
 import constants
+import graphics
 
 pygame.init()
+
+g_board = graphics.main_dysplay()
 
 game_loop = True
 
@@ -22,7 +25,7 @@ while game_loop:
 
 	#Home loop
 	while g_home:
-		#Speed game hack
+		home_board = graphics.Home_loop_display()
 		pygame.time.Clock().tick(30)
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
