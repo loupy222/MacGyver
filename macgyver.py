@@ -14,26 +14,9 @@ import constants
 
 pygame.init()
 
-#Ouverture de la fenêtre Pygame (carré : largeur = hauteur)
-window = pygame.display.set_mode((constants.window_side_size, constants.window_side_size))
-#Icone
-icon = pygame.image.load(constants.icon_img)
-pygame.display.set_icon(icon)
-#Titre
-pygame.display.set_caption(constants.Title)
-
-labyrinth = labyrinth.my_lab
-#Main loop
 game_loop = True
 
 while game_loop:	
-	#Home screen
-	home = pygame.image.load(constants.home_pic).convert()
-	window.blit(home, (0,0))
-
-	#Refresh screen
-	pygame.display.flip()
-
 	g_continue = True
 	g_home = True
 
@@ -58,10 +41,7 @@ while game_loop:
 	#on vérifie que le joueur a bien choix de jouer
 	#pour ne pas charger s'il quitte
 	if g_continue == True:
-		#Chargement du fond
-		back_img = pygame.image.load(constants.back_img).convert()
-		window.blit(back_img, (0,0))
-		labyrinth(window)		
+
 		#Création de Macgyver
 		Mac = character.Mac
 				
@@ -93,10 +73,10 @@ while game_loop:
 				elif event.key == pygame.K_DOWN:
 					Mac.moove('down')			
 			
-		#Affichages aux nouvelles positions
+		"""#Affichages aux nouvelles positions
 		window.blit(back_img, (0,0))
 		labyrinth(window)		
-		pygame.display.flip()
+		pygame.display.flip()"""
 
 		#Victoire -> Retour à l'accueil
 		if labyrinth.my_lab.structure[Mac.case_y][Mac.case_x] == 'G':
