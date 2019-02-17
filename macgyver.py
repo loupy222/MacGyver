@@ -11,7 +11,7 @@ import pygame
 import labyrinth
 import character
 import constants
-import graphics
+
 
 pygame.init()
 
@@ -37,7 +37,7 @@ while game_loop:
 				g_home = False
 				g_continue = False
 						
-			elif event.type == pygame.K_UP and event.key == pygame.K_ENTER:				
+			elif event.type == pygame.KEYDOWN and event.key == pygame.K_ENTER:				
 				g_home = False	#On quitte l'accueil
 				g_continue = True
 
@@ -76,7 +76,7 @@ while game_loop:
 				elif event.key == pygame.K_DOWN:
 					Mac.moove('down')			
 			
-		"""#Affichages aux nouvelles positions
+		"""Affichages aux nouvelles positions
 		window.blit(back_img, (0,0))
 		labyrinth(window)		
 		pygame.display.flip()"""
