@@ -27,11 +27,11 @@ class Labyrinth:
         while rand_free_tile != "0":
             rand_tile = random.randint(0, len(self.structure[rand_line]) -1)
             rand_free_tile = self.structure[rand_line][rand_tile]
-        return(rand_free_tile)
+        return rand_free_tile
 
 my_lab = Labyrinth()
 pprint.pprint(my_lab.structure)
-print(my_lab.rand_free_tile())
+"""print(my_lab.rand_free_tile())"""
 
 """def show(self):
         #This method is to display the game board

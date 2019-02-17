@@ -9,6 +9,7 @@ class Items:
 
 tube = Items("Tube", my_lab.rand_free_tile())
 print(tube.position)
+my_lab.structure.index(tube.position)
 syringe = Items("Syringe", my_lab.rand_free_tile())
 print(syringe.position)
 poison = Items("Poison", my_lab.rand_free_tile())
