@@ -1,4 +1,5 @@
-import labyrinth
+from labyrinth import my_lab
+import pprint
 
 class Items:
 
@@ -6,9 +7,9 @@ class Items:
         self.name = name
         self.position = position
 
-tube = Items("Tube", labyrinth.my_lab.rand_free_tile())
+tube = Items("Tube", my_lab.rand_free_tile())
 print(tube.position)
-syringe = Items("Syringe", labyrinth.my_lab.rand_free_tile())
+syringe = Items("Syringe", my_lab.rand_free_tile())
 print(syringe.position)
-poison = Items("Poison", labyrinth.my_lab.rand_free_tile())
+poison = Items("Poison", my_lab.rand_free_tile())
 print(poison.position)

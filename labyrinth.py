@@ -1,7 +1,6 @@
 import pprint
 import constants
 import random
-import items
 import pygame
 #import graphics
 
@@ -23,9 +22,7 @@ class Labyrinth:
 
     def rand_free_tile(self):
         rand_line = random.randint(0, len(self.structure) -1)
-        print (rand_line)
         rand_tile = random.randint(0, len(self.structure[rand_line]) -1)
-        print (rand_tile)
         rand_free_tile = self.structure[rand_line][rand_tile]
         while rand_free_tile != "0":
             rand_tile = random.randint(0, len(self.structure[rand_line]) -1)
@@ -33,10 +30,10 @@ class Labyrinth:
         return(rand_free_tile)
 
 my_lab = Labyrinth()
-
 pprint.pprint(my_lab.structure)
+print(my_lab.rand_free_tile())
 
-    """def show(self):
+"""def show(self):
         #This method is to display the game board
         wall_picture = pygame.image.load(constants.wall).convert()
         guardian_picture = pygame.image.load(constants.guardian).convert()

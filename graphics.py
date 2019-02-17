@@ -14,7 +14,7 @@ class main_dysplay:
 
 g_board = main_dysplay()
 
-class Home_loop_display:
+class HomeLoopDisplay:
     #Home screen
 	home = pygame.image.load(constants.home_pic).convert()
 	g_board.blit(home, (0,0))
@@ -23,7 +23,7 @@ class Home_loop_display:
 	pygame.display.flip()
 """home_board = Home_loop_display()"""
 
-class Game_loop_display:
+class GameLoopDisplay:
 
     #Chargement du fond
 	back_img = pygame.image.load(constants.back_img).convert()
@@ -31,4 +31,4 @@ class Game_loop_display:
 	labyrinth.my_lab(g_board)
 
 
-game_board = Game_loop_display ()
+game_board = GameLoopDisplay ()
