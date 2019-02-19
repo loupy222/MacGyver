@@ -1,10 +1,11 @@
 import pprint
 import constants
 import random
+import items
 import pygame
 #import graphics
 
-pygame.init()
+"""pygame.init()"""
 
 class Labyrinth:
 
@@ -30,8 +31,8 @@ class Labyrinth:
         return rand_line, rand_tile
  
 my_lab = Labyrinth()
-"""pprint.pprint(my_lab.structure)"""
-"""print(my_lab.rand_free_tile())"""
+pprint.pprint(my_lab.structure)
+
 
 """def show(self):
         #This method is to display the game board

@@ -1,5 +1,6 @@
 import constants
 import labyrinth
+import items
 import pprint
 
 class character:
@@ -10,7 +11,7 @@ class character:
         self.x = 0
         self.y = 0
         self.structure = labyrinth.my_lab.structure
-        self.structure [0] [0] = "G"
+        self.position = self.structure.index("S")
 
     def moove(self, direction):
 
@@ -37,6 +38,13 @@ class character:
                 self.case_y += 1
                 self.y = self.case_y * constants.sprite_size
 
-    
+    def catch_item(self, position):
+        back_pack = []
+        if self.position == items.tube.position:
+            back_pack.append("tube")
+        elif self.position == items.syringe.position:
+            back_pack.append("syringe")
+        elif self.position == items.poison.position:
+            back_pack.append("poison")
+            
 Mac = character()
-pprint.pprint(Mac.structure)

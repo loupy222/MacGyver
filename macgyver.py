@@ -2,9 +2,7 @@
 # -*- coding: Utf-8 -*
 
 """
-
 Script Python
-
 """
 
 import pygame
@@ -12,21 +10,20 @@ import labyrinth
 import character
 import constants
 
-
 pygame.init()
 
-g_board = graphics.main_dysplay()
+"""g_board = graphics.main_dysplay()"""
 
 game_loop = True
 
 while game_loop:	
-	g_continue = True
+	"""g_continue = True
 	g_home = True
 
 	#Home loop
 	while g_home:
-		"""home_board = graphics.Home_loop_display()
-		pygame.time.Clock().tick(30)"""
+		home_board = graphics.Home_loop_display()
+		pygame.time.Clock().tick(30)
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				game_loop = False
@@ -42,7 +39,7 @@ while game_loop:
 				g_continue = True
 
 	#on vérifie que le joueur a bien choix de jouer
-	#pour ne pas charger s'il quitte
+	#pour ne pas charger s'il quitte"""
 	if g_continue == True:
 
 		#Création de Macgyver
@@ -52,7 +49,7 @@ while game_loop:
 	while g_continue:
 	
 		#Limitation of loop speed
-		"""pygame.time.Clock().tick(30)"""
+		pygame.time.Clock().tick(30)
 		
 		for event in pygame.event.get():
 		
