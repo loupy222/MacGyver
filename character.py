@@ -1,5 +1,6 @@
 import constants
 import labyrinth
+import pprint
 
 class character:
 
@@ -9,7 +10,8 @@ class character:
         self.x = 0
         self.y = 0
         self.structure = labyrinth.my_lab.structure
-    
+        self.structure [0] [0] = "G"
+
     def moove(self, direction):
 
         if direction == "right":
@@ -35,4 +37,6 @@ class character:
                 self.case_y += 1
                 self.y = self.case_y * constants.sprite_size
 
+    
 Mac = character()
+pprint.pprint(Mac.structure)

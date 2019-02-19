@@ -6,11 +6,12 @@ class Items:
     def __init__ (self, name, position):
         self.name = name
         self.position = position
-
+        self.structure = my_lab.structure
+        self.structure[position[0]] [position[1]] = name[0]
+        
 tube = Items("Tube", my_lab.rand_free_tile())
-print(tube.position)
-"""pprint.pprint(my_lab.structure)"""
+pprint.pprint(tube.structure)
 syringe = Items("Syringe", my_lab.rand_free_tile())
-print(syringe.position)
+pprint.pprint(syringe.structure)
 poison = Items("Poison", my_lab.rand_free_tile())
-print(poison.position)
+pprint.pprint(poison.structure)
