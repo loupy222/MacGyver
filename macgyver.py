@@ -25,8 +25,8 @@ while game_loop:
 
 	#Home loop
 	while g_home:
-		home_board = graphics.Home_loop_display()
-		pygame.time.Clock().tick(30)
+		"""home_board = graphics.Home_loop_display()
+		pygame.time.Clock().tick(30)"""
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				game_loop = False
@@ -52,7 +52,7 @@ while game_loop:
 	while g_continue:
 	
 		#Limitation of loop speed
-		pygame.time.Clock().tick(30)
+		"""pygame.time.Clock().tick(30)"""
 		
 		for event in pygame.event.get():
 		
