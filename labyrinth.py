@@ -1,7 +1,6 @@
 import pprint
 import constants
 import random
-import items
 import pygame
 #import graphics
 
@@ -30,6 +29,11 @@ class Labyrinth:
             rand_free_tile = self.structure[rand_line][rand_tile]
         return rand_line, rand_tile
  
+    def chara_s_position(self):    
+        idx = sum(self.structure,[]).index("D")
+        idx = idx%15,idx%15
+        return idx
+
 my_lab = Labyrinth()
 pprint.pprint(my_lab.structure)
 

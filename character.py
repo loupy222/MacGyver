@@ -3,15 +3,17 @@ import labyrinth
 import items
 import pprint
 
-class character:
+class Character:
 
-    def __init__(self):
+    def __init__(self, name, position):
+        self.name = name
+        self.position = position
+        self.structure = labyrinth.my_lab.structure
+        self.structure[position[0]] [position[1]] = name[0]
         self.case_x = 0
         self.case_y = 0
         self.x = 0
         self.y = 0
-        self.structure = labyrinth.my_lab.structure
-        self.position = self.structure.index("S")
 
     def moove(self, direction):
 
@@ -46,5 +48,10 @@ class character:
             back_pack.append("syringe")
         elif self.position == items.poison.position:
             back_pack.append("poison")
-            
-Mac = character()
+        if len(back_pack) == 3:
+            return True
+        else:
+            return False
+
+mac = Character("Mac", labyrinth.my_lab.chara_s_position())
+pprint.pprint(labyrinth.my_lab.structure)
