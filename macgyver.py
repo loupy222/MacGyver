@@ -9,11 +9,12 @@ import pygame
 import labyrinth
 import character
 import constants
+import pprint
 
 pygame.init()
 
 """g_board = graphics.main_dysplay()"""
-
+pprint.pprint(labyrinth.my_lab.structure)
 game_loop = True
 
 while game_loop:	
@@ -22,6 +23,7 @@ while game_loop:
 
 	#Home loop
 	while g_home:
+		pass
 		home_board = graphics.Home_loop_display()
 		pygame.time.Clock().tick(30)
 		for event in pygame.event.get():
@@ -39,45 +41,44 @@ while game_loop:
 				g_continue = True
 
 	#on vérifie que le joueur a bien choix de jouer
-	#pour ne pas charger s'il quitte"""
-	if g_continue == True:
+	#pour ne pas charger s'il quitte
+		if g_continue == True:
 
-		#Création de Macgyver
-		Mac = character.Mac
-				
+		#Création de Macgyver"""
+	Mac = character.mac
+		
 	#Game loop
-	while g_continue:
+	"""while g_continue:
 	
 		#Limitation of loop speed
-		pygame.time.Clock().tick(30)
+		#pygame.time.Clock().tick(30)"""
 		
-		for event in pygame.event.get():
+	for event in pygame.event.get():
 		
-			#Si l'utilisateur quitte, on met la variable qui continue le jeu
-			#ET la variable générale à 0 pour fermer la fenêtre
-			if event.type == pygame.QUIT:
-				g_continue = False
+		#Si l'utilisateur quitte, on met la variable qui continue le jeu
+		#ET la variable générale à 0 pour fermer la fenêtre
+		"""if event.type == pygame.QUIT:
+			g_continue = False
+			game_loop = False
+		elif event.type == pygame.KEYDOWN:
+			#Si l'utilisateur presse Echap ici, on revient seulement au menu
+			if event.key == pygame.K_ESCAPE:
 				game_loop = False
-			elif event.type == pygame.KEYDOWN:
-				#Si l'utilisateur presse Echap ici, on revient seulement au menu
-				if event.key == pygame.K_ESCAPE:
-					game_loop = False
-					
+				"""	
 				#Touches de déplacement de macgyver
-				elif event.key == pygame.K_RIGHT:
-					Mac.moove('rignt')
-				elif event.key == pygame.K_LEFT:
-					Mac.moove('left')
-				elif event.key == pygame.K_UP:
-					Mac.moove('up')
-				elif event.key == pygame.K_DOWN:
-					Mac.moove('down')			
-			
-		"""Affichages aux nouvelles positions
-		window.blit(back_img, (0,0))
-		labyrinth(window)		
-		pygame.display.flip()"""
+		if event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT:
+			Mac.moove('rignt')
 
-		#Victoire -> Retour à l'accueil
-		if labyrinth.my_lab.structure[Mac.case_y][Mac.case_x] == 'G':
+		elif event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
+			Mac.moove('left')
+
+		elif event.type == pygame.KEYDOWN and event.key == pygame.K_UP:
+			Mac.moove('up')
+
+		elif event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN:
+			Mac.moove('down')
+
+
+		elif labyrinth.my_lab.structure[Mac.case_y][Mac.case_x] == 'G':
+			print("You win")
 			game_loop = False

@@ -37,21 +37,26 @@ class Character:
 
         if direction == "down":
             if self.case_y < (constants.numb_sprites_side -1):
-                self.case_y += 1
-                self.y = self.case_y * constants.sprite_size
+                if self.structure[self.case_y + 1][self.case_x] != "w":
+                    self.case_y += 1
+                    self.y = self.case_y * constants.sprite_size
 
     def catch_item(self, position):
         back_pack = []
         if self.position == items.tube.position:
             back_pack.append("tube")
-        elif self.position == items.syringe.position:
+            print(back_pack)
+        elif self.position == items.syringe.position:            
             back_pack.append("syringe")
+            print(back_pack)
         elif self.position == items.poison.position:
             back_pack.append("poison")
+            print(back_pack)
         if len(back_pack) == 3:
             return True
         else:
             return False
 
 mac = Character("Mac", labyrinth.my_lab.chara_s_position())
-pprint.pprint(labyrinth.my_lab.structure)
+guardian = Character("Guardian", labyrinth.my_lab.guardian_s_position())
+"""pprint.pprint(labyrinth.my_lab.structure)"""

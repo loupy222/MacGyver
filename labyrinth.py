@@ -33,9 +33,14 @@ class Labyrinth:
         idx = sum(self.structure,[]).index("D")
         idx = idx%15,idx%15
         return idx
+    
+    def guardian_s_position(self):    
+        idx = sum(self.structure,[]).index("A")
+        idx = idx%15,idx%15
+        return idx
 
 my_lab = Labyrinth()
-pprint.pprint(my_lab.structure)
+"""pprint.pprint(my_lab.structure)"""
 
 
 """def show(self):
