@@ -5,46 +5,19 @@
 Script Python
 """
 
-import pygame
 import labyrinth
 import character
 import constants
+import keyboard
 import pprint
 
-pygame.init()
 
 """g_board = graphics.main_dysplay()"""
 pprint.pprint(labyrinth.my_lab.structure)
 game_loop = True
 
 while game_loop:	
-	"""g_continue = True
-	g_home = True
 
-	#Home loop
-	while g_home:
-		pass
-		home_board = graphics.Home_loop_display()
-		pygame.time.Clock().tick(30)
-		for event in pygame.event.get():
-			if event.type == pygame.QUIT:
-				game_loop = False
-				g_home = False
-
-			elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE: 
-				game_loop = False
-				g_home = False
-				g_continue = False
-						
-			elif event.type == pygame.KEYDOWN and event.key == pygame.K_ENTER:				
-				g_home = False	#On quitte l'accueil
-				g_continue = True
-
-	#on vérifie que le joueur a bien choix de jouer
-	#pour ne pas charger s'il quitte
-		if g_continue == True:
-
-		#Création de Macgyver"""
 	Mac = character.mac
 		
 	#Game loop
@@ -52,33 +25,59 @@ while game_loop:
 	
 		#Limitation of loop speed
 		#pygame.time.Clock().tick(30)"""
+	while True:
+		try:
+			if keyboard.is_pressed(keyboard.key_RIGHT):
+				Mac.moove('rignt')
+				break
+			else:
+				pass
+		except:
+			break
+
+		try:
+			if keyboard.is_pressed(keyboard.KEY_LEFT):
+				Mac.moove('left')
+				break
+			else:
+				pass
+		except:
+			break
+
+		try:
+			if keyboard.is_pressed(keyboard.KEY_UP):
+				Mac.moove('up')
+				break
+			else:
+				pass
+		except:
+			break
+
+		try:
+			if keyboard.is_pressed(keyboard.KEY_DOWN):
+				Mac.moove('down')
+				break
+			else:
+				pass
+		except:
+			break
 		
-	for event in pygame.event.get():
-		
-		#Si l'utilisateur quitte, on met la variable qui continue le jeu
-		#ET la variable générale à 0 pour fermer la fenêtre
-		"""if event.type == pygame.QUIT:
-			g_continue = False
-			game_loop = False
-		elif event.type == pygame.KEYDOWN:
-			#Si l'utilisateur presse Echap ici, on revient seulement au menu
-			if event.key == pygame.K_ESCAPE:
-				game_loop = False
-				"""	
+		"""for event in event.get():
+
 				#Touches de déplacement de macgyver
-		if event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT:
+		if event.type == event.KEYDOWN and event.key == event.K_RIGHT:
 			Mac.moove('rignt')
 
-		elif event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
+		elif event.type == event.KEYDOWN and event.key == event.K_LEFT:
 			Mac.moove('left')
 
-		elif event.type == pygame.KEYDOWN and event.key == pygame.K_UP:
+		elif event.type == event.key and event.key == event.K_UP:
 			Mac.moove('up')
 
-		elif event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN:
-			Mac.moove('down')
+		elif event.type == event.KEYDOWN and event.key == event.K_DOWN:
+			Mac.moove('down')"""
 
 
-		elif labyrinth.my_lab.structure[Mac.case_y][Mac.case_x] == 'G':
-			print("You win")
-			game_loop = False
+	if labyrinth.my_lab.structure[Mac.case_y][Mac.case_x] == 'G':
+		print("You win")
+		game_loop = False

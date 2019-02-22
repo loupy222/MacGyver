@@ -55,4 +55,4 @@ my_lab = Labyrinth()
                     graphics.g_board.blit(wall_picture, (position.pixels_x, position.pixels_y))
                 elif self.structure[x][y] == "G":
                     graphics.g_board.blit(guardian_picture,(position.pixels_x, position.pixels_y))
-    # take randomly a free space from the structure []"""
+"""
