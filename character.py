@@ -10,8 +10,8 @@ class Character:
         self.position = position
         self.structure = labyrinth.my_lab.structure
         self.structure[position[0]] [position[1]] = name[0]
-        self.case_x = 0
-        self.case_y = 0
+        self.case_x = position[0]
+        self.case_y = position[1]
         self.x = 0
         self.y = 0
 
