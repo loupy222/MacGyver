@@ -2,6 +2,7 @@ import constants
 import labyrinth
 import items
 import pprint
+import pygame
 
 class Character:
 

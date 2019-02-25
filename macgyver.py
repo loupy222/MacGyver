@@ -5,6 +5,7 @@
 Script Python
 """
 import pygame
+from pygame.locals import *
 import labyrinth
 import character
 import constants
@@ -17,8 +18,10 @@ game_loop = True
 
 while game_loop:
 
-	"""pprint.pprint(labyrinth.my_lab.structure)"""
+
 	Mac = character.mac
+	moove = character.Character.moove
+	pprint.pprint(labyrinth.my_lab.structure)
 	g_continue = True	
 
 	while g_continue:
@@ -26,26 +29,25 @@ while game_loop:
 		#Limitation of loop speed
 		#pygame.time.Clock().tick(30)"""
 
-		for event in pygame.event.get():
-			pressed = pygame.key.get_pressed()
+		"""for event in pygame.event.get():
+			if event.type == KEYDOWN:
+				if event.type == QUIT:
+					game_loop = False
 
-			"""if event.type == QUIT:
-				game_loop = False"""
+				if event.key == K_ESCAPE:
+					g_continue = False
 
-			if pressed[pygame.K_ESCAPE]:
-				g_continue = False
+				if event.key == K_RIGHT:
+					Mac.moove(right)
 
-			elif pressed[pygame.K_RIGHT]:
-				Mac.moove('rignt')
+				if event.key == K_LEFT:
+					Mac.moove("left")
 
-			elif pressed[pygame.K_LEFT]:
-				Mac.moove('left')
+				if event.key == K_UP:
+					Mac.moove("up")
 
-			elif pressed[pygame.K_UP]:
-				Mac.moove('up')
-
-			elif pressed[pygame.K_DOWN]:
-				Mac.moove('down')
+				if event.key == K_DOWN:
+					Mac.moove("down")"""
 
 	pprint.pprint(labyrinth.my_lab.structure)
 
