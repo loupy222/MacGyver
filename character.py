@@ -1,6 +1,7 @@
 
 import constants
 import labyrinth
+import position
 import items
 import pprint
 
@@ -11,7 +12,8 @@ class Character:
         self.position = position
         self.structure = labyrinth.my_lab.structure
         self.structure[position[0]] [position[1]] = name[0]
-        self.case_x = 0
+        self.mooves = position.mooves
+        """self.case_x = 0
         self.case_y = 0
         self.x = 0
         self.y = 0
@@ -22,7 +24,7 @@ class Character:
             if self.case_x < (constants.numb_sprites_side - 1):
                 if self.structure[self.position[0] + 1][self.position[1]] != "w":
                     self.position[0] + 1
-                    """self.x = self.case_x * constants.sprite_size"""
+                    self.x = self.case_x * constants.sprite_size
   
         if direction == "left":
             if self.case_x > 0:
@@ -41,19 +43,19 @@ class Character:
             if self.case_y < (constants.numb_sprites_side -1):
                 if self.structure[self.case_x][self.case_y + 1] != "w":
                     self.case_y += 1
-                    self.y = self.case_y * constants.sprite_size
+                    self.y = self.case_y * constants.sprite_size"""
                     
 
     def catch_item(self, position):
         back_pack = []
         if self.position == items.tube.position:
-            back_pack.append("tube")
+            back_pack.add("tube")
             print(back_pack)
         elif self.position == items.syringe.position:            
-            back_pack.append("syringe")
+            back_pack.add("syringe")
             print(back_pack)
         elif self.position == items.poison.position:
-            back_pack.append("poison")
+            back_pack.add("poison")
             print(back_pack)
         elif len(back_pack) == 3:
             return True

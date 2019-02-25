@@ -12,4 +12,3 @@ class Items:
 tube = Items("Tube", labyrinth.my_lab.rand_free_tile())
 syringe = Items("Syringe", labyrinth.my_lab.rand_free_tile())
 poison = Items("Poison", labyrinth.my_lab.rand_free_tile())
-"""pprint.pprint(labyrinth.my_lab.structure)"""

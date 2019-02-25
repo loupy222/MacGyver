@@ -6,6 +6,7 @@ Script Python
 """
 import os
 import labyrinth
+from mooves import mooves 
 import character
 import constants
 import pprint
@@ -21,28 +22,25 @@ while game_loop:
 	while g_continue:
 
 		Mac = character.mac
-		moove = character.Character.moove
 		user_answer = input("Quel direction voulez-vous prendre? (up, down, right, left)  ")
 
 		if user_answer == "right":
-			Mac.moove("right")
+			Mac.mooves.right()
 			pprint.pprint(Mac.structure)
 		if user_answer == "left":
-			Mac.moove("left")
+			Mac.mooves.left()
 
 		if user_answer == "up":
-			Mac.moove("up")
+			Mac.mooves.up()
 
 		if user_answer == "down":
-			Mac.moove("down")
+			Mac.mooves.down()
 
 		pprint.pprint(labyrinth.my_lab.structure)
 
 	if labyrinth.my_lab.structure[Mac.case_y][Mac.case_x] == 'G':
 		print("You win")
 		game_loop = False
-		quitter = input("Souhaitez-vous me poser une autre question (o/n) ? ")
-	else quitter == "n" or quitter == "N":
 		print("MERCI D'AVOIR JOUE")
 		g_continue = False
 
