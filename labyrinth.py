@@ -24,7 +24,7 @@ class Labyrinth:
         rand_line = random.randint(0, len(self.structure) -1)
         rand_tile = random.randint(0, len(self.structure[rand_line]) -1)
         rand_free_tile = self.structure[rand_line][rand_tile]
-        while rand_free_tile != "0":
+        while rand_free_tile != " ":
             rand_tile = random.randint(0, len(self.structure[rand_line]) -1)
             rand_free_tile = self.structure[rand_line][rand_tile]
         return rand_line, rand_tile
