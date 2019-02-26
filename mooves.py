@@ -1,10 +1,9 @@
 import constants
-from labyrinth import my_lab
+import labyrinth
 class mooves:
 
     def __init__(self):
-        self.position = position
-        self.structure = my_lab.structure
+        self.structure = labyrinth.my_lab.structure
         self.case_x = 0
         self.case_y = 0
 
@@ -16,7 +15,7 @@ class mooves:
     def left(self):
         if self.case_x > 0:
             if self.structure[self.case_x -1][self.case_y] != "w":
-                returnself.structure[self.case_x -1][self.case_y]
+                return self.structure[self.case_x -1][self.case_y]
 
     def up(self):
         if self.case_y > 0:
@@ -28,4 +27,4 @@ class mooves:
             if self.structure[self.case_x][self.case_y +1] != "w":
                 return self.structure[self.case_x][self.case_y +1]
 
-mooves = mooves()          
+       

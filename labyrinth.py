@@ -1,10 +1,6 @@
 import pprint
-import constants
-import random
-import pygame
-#import graphics
+from random import randint
 
-"""pygame.init()"""
 
 class Labyrinth:
 
@@ -16,16 +12,18 @@ class Labyrinth:
         """
         # Read the file "structure" and save the structure of the labyrinth
         # as a list in structure []
+    
 
         with open("draw_file",'r') as labyrinth:
             self.structure = [[letter for letter in line if letter != "\n"] for line in labyrinth]
 
+
     def rand_free_tile(self):
-        rand_line = random.randint(0, len(self.structure) -1)
-        rand_tile = random.randint(0, len(self.structure[rand_line]) -1)
+        rand_line = randint(0, len(self.structure) -1)
+        rand_tile = randint(0, len(self.structure[rand_line]) -1)
         rand_free_tile = self.structure[rand_line][rand_tile]
         while rand_free_tile != " ":
-            rand_tile = random.randint(0, len(self.structure[rand_line]) -1)
+            rand_tile = randint(0, len(self.structure[rand_line]) -1)
             rand_free_tile = self.structure[rand_line][rand_tile]
         return rand_line, rand_tile
  
@@ -39,11 +37,10 @@ class Labyrinth:
         idx = idx%15,idx%15
         return idx
 
-my_lab = Labyrinth()
-"""pprint.pprint(my_lab.structure)"""
 
 
-"""def show(self):
+
+    """def show(self):
         #This method is to display the game board
         wall_picture = pygame.image.load(constants.wall).convert()
         guardian_picture = pygame.image.load(constants.guardian).convert()

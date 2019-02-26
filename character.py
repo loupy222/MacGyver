@@ -1,19 +1,18 @@
 
 import constants
 import labyrinth
-import position
 import items
 import pprint
+
 
 class Character:
 
     def __init__(self, name, position):
         self.name = name
         self.position = position
-        self.structure = labyrinth.my_lab.structure
+        self.structure = labyrinth.structure
         self.structure[position[0]] [position[1]] = name[0]
-        self.mooves = position.mooves
-        """self.case_x = 0
+        self.case_x = 0
         self.case_y = 0
         self.x = 0
         self.y = 0
@@ -23,27 +22,27 @@ class Character:
         if direction == "right":
             if self.case_x < (constants.numb_sprites_side - 1):
                 if self.structure[self.position[0] + 1][self.position[1]] != "w":
-                    self.position[0] + 1
-                    self.x = self.case_x * constants.sprite_size
+                    self.position[0] += 1
+                    #elf.x = self.case_x * constants.sprite_size
   
         if direction == "left":
             if self.case_x > 0:
                  if self.structure[self.case_x - 1][self.case_y]!= "w":
                     self.case_x -= 1
-                    self.x = self.case_x * constants.sprite_size
+                    #self.x = self.case_x * constants.sprite_size
                   
         if direction == "up":
             if self.case_y > 0:
                 if self.structure[self.case_x][self.case_y - 1] != "w":
                     self.case_y -= 1
-                    self.y = self.case_y * constants.sprite_size
+                    #self.y = self.case_y * constants.sprite_size
                    
 
         if direction == "down":
             if self.case_y < (constants.numb_sprites_side -1):
                 if self.structure[self.case_x][self.case_y + 1] != "w":
                     self.case_y += 1
-                    self.y = self.case_y * constants.sprite_size"""
+                    #self.y = self.case_y * constants.sprite_size
                     
 
     def catch_item(self, position):
@@ -62,6 +61,6 @@ class Character:
         else:
             return False
 
-mac = Character("Mac", labyrinth.my_lab.chara_s_position())
-guardian = Character("Guardian", labyrinth.my_lab.guardian_s_position())
-"""pprint.pprint(labyrinth.my_lab.structure)"""
+
+
+#guardian = Character("Guardian", labyrinth.my_lab.guardian_s_position())
