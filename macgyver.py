@@ -5,7 +5,7 @@
 Script Python
 """
 import os
-import labyrinth
+from labyrinth import lab
 from character import Character
 import constants
 import pprint
