@@ -12,7 +12,6 @@ class Labyrinth:
         """
         # Read the file "structure" and save the structure of the labyrinth
         # as a list in structure []
-    
 
         with open("draw_file",'r') as labyrinth:
             self.structure = [[letter for letter in line if letter != "\n"] for line in labyrinth]
@@ -38,8 +37,6 @@ class Labyrinth:
         return idx
 
 
-
-
     """def show(self):
         #This method is to display the game board
         wall_picture = pygame.image.load(constants.wall).convert()
@@ -53,3 +50,4 @@ class Labyrinth:
                 elif self.structure[x][y] == "G":
                     graphics.g_board.blit(guardian_picture,(position.pixels_x, position.pixels_y))
 """
+lab = Labyrinth()

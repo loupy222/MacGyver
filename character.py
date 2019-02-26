@@ -1,6 +1,6 @@
 
 import constants
-import labyrinth
+from labyrinth import lab
 import items
 import pprint
 
@@ -10,7 +10,7 @@ class Character:
     def __init__(self, name, position):
         self.name = name
         self.position = position
-        self.structure = labyrinth.structure
+        self.structure = lab.structure
         self.structure[position[0]] [position[1]] = name[0]
         self.case_x = 0
         self.case_y = 0

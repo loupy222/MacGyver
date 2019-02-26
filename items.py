@@ -1,7 +1,6 @@
-from labyrinth import Labyrinth
+from labyrinth import lab
 import pprint
 
-lab = Labyrinth()
 
 class Items:
 

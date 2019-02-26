@@ -5,8 +5,8 @@
 Script Python
 """
 import os
-from labyrinth import Labyrinth
-import character
+import labyrinth
+from character import Character
 import constants
 import pprint
 from items import Items
@@ -16,10 +16,10 @@ game_loop = True
 
 while game_loop:
 
-	lab = Labyrinth()
+	
 	g_continue = True	
-	Mac = character.Character("Mac", lab.chara_s_position())
-	Guardian = character.Character("Guardian", lab.guardian_s_position())
+	Mac = Character("Mac", lab.chara_s_position())
+	Guardian = Character("Guardian", lab.guardian_s_position())
 	tube = Items("Tube", lab.rand_free_tile())
 	syringe = Items("Syringe", lab.rand_free_tile())
 	poison = Items("Poison", lab.rand_free_tile())
