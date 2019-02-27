@@ -7,11 +7,11 @@ import pprint
 
 class Character:
 
-    def __init__(self, name, position):
-        self.name = name
-        self.position = position
+    def __init__(self, name, structure):
+        self.mane = name[0]
+        #self.position = position
         self.structure = lab.structure
-        self.structure[position[0]] [position[1]] = name[0]
+        #self.structure[self.case_x] [self.case_y] = name[0]
         self.case_x = 0
         self.case_y = 0
         self.x = 0
@@ -21,9 +21,8 @@ class Character:
 
         if direction == "right":
             if self.case_x < (constants.numb_sprites_side - 1):
-                if self.structure[self.case_x + 1][self.case_y] != "w":
+                if self.structure[self.case_x +1] [self.case_y]!= "w":
                     self.case_x += 1
-                    #elf.x = self.case_x * constants.sprite_size
   
         if direction == "left":
             if self.case_x > 0:

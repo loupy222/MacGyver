@@ -30,15 +30,15 @@ class Labyrinth:
         for x, line in enumerate(self.structure):
             for y, letter in enumerate(line):
                 if self.structure[x][y] == "D":
-                    position = x, y
-                    return position
+                    #position = x, y
+                    return self.structure[x] [y]
     
     def guardian_s_position(self):    
         for x, line in enumerate(self.structure):
             for y, letter in enumerate(line):
                 if self.structure[x][y] == "A":
-                    position = x, y
-                    return position
+                    #position = x, y
+                    return self.structure[x] [y]
 
 
     """def show(self):

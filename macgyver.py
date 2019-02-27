@@ -16,14 +16,14 @@ game_loop = True
 
 while game_loop:
 
-	
+
 	g_continue = True	
 	Mac = Character("Mac", lab.chara_s_position())
 	Guardian = Character("Guardian", lab.guardian_s_position())
 	tube = Items("Tube", lab.rand_free_tile())
 	syringe = Items("Syringe", lab.rand_free_tile())
 	poison = Items("Poison", lab.rand_free_tile())
-	pprint.pprint(lab.structure)
+
 	
 	while g_continue:
 
@@ -31,7 +31,7 @@ while game_loop:
 
 		if user_answer == "right":
 			Mac.moove("right")
-			pprint.pprint(lab.structure)
+
 		if user_answer == "left":
 			Mac.moove("left")
 
@@ -43,7 +43,7 @@ while game_loop:
 
 		pprint.pprint(lab.structure)
 
-	if labyrinth.my_lab.structure[Mac.case_y][Mac.case_x] == 'G':
+	if lab.structure[Mac.case_y][Mac.case_x] == 'G':
 		print("You win")
 		game_loop = False
 		print("MERCI D'AVOIR JOUE")
