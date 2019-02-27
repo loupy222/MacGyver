@@ -21,8 +21,8 @@ class Character:
 
         if direction == "right":
             if self.case_x < (constants.numb_sprites_side - 1):
-                if self.structure[self.position[0] + 1][self.position[1]] != "w":
-                    self.position[0] += 1
+                if self.structure[self.case_x + 1][self.case_y] != "w":
+                    self.case_x += 1
                     #elf.x = self.case_x * constants.sprite_size
   
         if direction == "left":

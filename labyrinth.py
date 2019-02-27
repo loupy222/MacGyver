@@ -27,14 +27,18 @@ class Labyrinth:
         return rand_line, rand_tile
  
     def chara_s_position(self):    
-        idx = sum(self.structure,[]).index("D")
-        idx = idx%15,idx%15
-        return idx
+        for x, line in enumerate(self.structure):
+            for y, letter in enumerate(line):
+                if self.structure[x][y] == "D":
+                    position = x, y
+                    return position
     
     def guardian_s_position(self):    
-        idx = sum(self.structure,[]).index("A")
-        idx = idx%15,idx%15
-        return idx
+        for x, line in enumerate(self.structure):
+            for y, letter in enumerate(line):
+                if self.structure[x][y] == "A":
+                    position = x, y
+                    return position
 
 
     """def show(self):
