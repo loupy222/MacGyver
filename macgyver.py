@@ -27,8 +27,8 @@ while game_loop:
 	syringe = Items("Syringe", lab.structure, lab.rand_free_tile())
 	poison = Items("Poison", lab.structure, lab.rand_free_tile())
 
-	lab.structure[Mac.case_y][Mac.case_x] = "M"
-	lab.structure[Guardian.case_y][Guardian.case_x] = "G"
+	lab.structure[Mac.case_x][Mac.case_y] = "M"
+	lab.structure[Guardian.case_x][Guardian.case_y] = "G"
 	lab.structure[syringe.case_x][syringe.case_y] ="S"
 	lab.structure[tube.case_x][tube.case_y] ="T"
 	lab.structure[poison.case_x][poison.case_y] ="P"
