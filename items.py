@@ -1,12 +1,13 @@
-from labyrinth import lab
 import pprint
 
 
 class Items:
 
-    def __init__ (self, name, position):
-        self.name = name
+    def __init__ (self, name, structure, position):
+        self.name = name[0]
         self.position = position
-        self.structure = lab.structure
-        self.structure[position[0]] [position[1]] = name[0]
+        self.structure = structure
+        self.case_x = self.position[0]
+        self.case_y = self.position[1]
+       
 

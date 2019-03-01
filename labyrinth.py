@@ -30,15 +30,15 @@ class Labyrinth:
         for x, line in enumerate(self.structure):
             for y, letter in enumerate(line):
                 if self.structure[x][y] == "D":
-                    #position = x, y
-                    return self.structure[x] [y]
+                    position = x, y
+                    return position
     
     def guardian_s_position(self):    
         for x, line in enumerate(self.structure):
             for y, letter in enumerate(line):
                 if self.structure[x][y] == "A":
-                    #position = x, y
-                    return self.structure[x] [y]
+                    position = x, y
+                    return position
 
 
     """def show(self):
@@ -54,4 +54,3 @@ class Labyrinth:
                 elif self.structure[x][y] == "G":
                     graphics.g_board.blit(guardian_picture,(position.pixels_x, position.pixels_y))
 """
-lab = Labyrinth()
