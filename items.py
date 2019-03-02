@@ -8,6 +8,5 @@ class Items:
         self.position = position
         self.structure = structure
         self.case_x = self.position[0]
-        self.case_y = self.position[1]
-       
+        self.case_y = self.position[1]   
 

@@ -58,7 +58,3 @@ class Character:
             return "FULL"
         else:
             return "EMPTY"
-
-
-
-#guardian = Character("Guardian", labyrinth.my_lab.guardian_s_position())
