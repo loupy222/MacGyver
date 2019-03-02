@@ -4,6 +4,10 @@ import pprint
 
 
 class Character:
+    """
+    Class to create the characters whith name,
+    initial position, valid mooves and catch items.
+    """ 
 
     def __init__(self, name, structure, position):
         self.mane = name[0]
@@ -18,14 +22,14 @@ class Character:
 
         if direction == "right":
             if self.case_x < (numb_sprites_side - 1):
-                if self.structure[self.case_y] [self.case_x + 1]!= "w":
+                if self.structure[self.case_y][self.case_x + 1] != "w":
                     self.case_x += 1
                     #self.x = self.case_x * constants.sprite_size
                    
   
         if direction == "left":
             if self.case_x > 0:
-                 if self.structure[self.case_y][self.case_x -1]!= "w":
+                 if self.structure[self.case_y][self.case_x -1] != "w":
                     self.case_x -= 1
                     #self.x = self.case_x * constants.sprite_size
                   
@@ -45,15 +49,15 @@ class Character:
 
     def catch_item(self, position):
         back_pack = []
-        if self.position == macgyver.tube.position:
+        if [self.case_x][self.case_y] == "T":
             back_pack.add("tube")
             print( back_pack )
-        elif self.position == macgyver.syringe.position:            
+        elif [self.case_x][self.case_y] == "S":            
             back_pack.add("syringe")
             print(back_pack )
-        elif self.position == macgyver.poison.position:
+        elif [self.case_x][self.case_y] == "P":
             back_pack.add("poison")
-            print( back_pack)
+            print( back_pack )
         elif len(back_pack) == 3:
             return "FULL"
         else:

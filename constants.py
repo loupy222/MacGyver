@@ -1,4 +1,4 @@
-"""Constants Labyrinth"""
+"""GAME Constants"""
 
 numb_sprites_side = 15
 sprite_size = 40
