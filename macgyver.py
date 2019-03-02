@@ -34,6 +34,7 @@ while game_loop:
 	lab.structure[poison.case_x][poison.case_y] ="P"
 
 	pprint.pprint(lab.structure)
+
 	
 	while g_continue:
 
