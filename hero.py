@@ -1,6 +1,4 @@
-
 from constants import numb_sprites_side
-import pprint
 
 
 class Character:
