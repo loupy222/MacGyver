@@ -1,5 +1,5 @@
 from constants import numb_sprites_side
-
+from pprint import pprint
 
 class Character:
     """
@@ -8,40 +8,40 @@ class Character:
     """ 
 
     def __init__(self, name, structure, position):
-        self.mane = name[0]
+        self.nane = name
         self.position = position
         self.structure = structure
         self.case_x = position[0]
         self.case_y = position[1]
         #self.x = 0
         #self.y = 0
+        #print(self.case_x, self.case_y)
         
     def moove(self, direction):
 
         if direction == "right":
             if self.case_x < (numb_sprites_side - 1):
-                if self.structure[self.case_y][self.case_x + 1] != "w":
-                    self.case_x += 1
-                    #self.x = self.case_x * constants.sprite_size
-                   
+                if self.structure[self.case_x][self.case_y +1] != "w":
+                    self.case_y += 1
+                    #self.x = self.case_x * constants.sprite_size            
   
         if direction == "left":
             if self.case_x > 0:
-                 if self.structure[self.case_y][self.case_x -1] != "w":
-                    self.case_x -= 1
+                 if self.structure[self.case_x][self.case_y -1] != "w":
+                    self.case_y -= 1
                     #self.x = self.case_x * constants.sprite_size
                   
         if direction == "up":
             if self.case_y > 0:
-                if self.structure[self.case_y -1][self.case_x] != "w":
-                    self.case_y -= 1
+                if self.structure[self.case_x -1][self.case_y] != "w":
+                    self.case_x -= 1
                     #self.y = self.case_y * constants.sprite_size
                    
 
         if direction == "down":
             if self.case_y < (numb_sprites_side -1):
-                if self.structure[self.case_y +1][self.case_x] != "w":
-                    self.case_y += 1
+                if self.structure[self.case_x +1][self.case_y] != "w":
+                    self.case_x += 1
                     #self.y = self.case_y * constants.sprite_size
          
 
