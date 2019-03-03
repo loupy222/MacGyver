@@ -45,18 +45,18 @@ class Character:
                     #self.y = self.case_y * constants.sprite_size
          
 
-    def catch_item(self, position):
+    def catch_item(self):
         back_pack = []
         if [self.case_x][self.case_y] == "T":
             back_pack.add("tube")
-            print( back_pack )
+            print("You take ",back_pack, " in your poket!")
         elif [self.case_x][self.case_y] == "S":            
             back_pack.add("syringe")
-            print(back_pack )
+            print("You have ",back_pack, " in your poket, now!")
         elif [self.case_x][self.case_y] == "P":
             back_pack.add("poison")
-            print( back_pack )
+            print("You have ",back_pack, " in your poket, dam it's nice!")
         elif len(back_pack) == 3:
-            return "FULL"
+            return True
         else:
-            return "EMPTY"
+            return False
