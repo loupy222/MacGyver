@@ -19,32 +19,28 @@ class Character:
     def moove(self, direction):
 
         if direction == "right":
-            if self.case_x in range(14):
+            if self.case_x in range(15):
                 if self.structure[self.case_x][self.case_y +1] != "w":
                     self.case_y += 1
-                    self.structure[self.case_x][self.case_y] = "M"
                     #self.x = self.case_x * constants.sprite_size            
   
         if direction == "left":
-            if self.case_x in range(14):
+            if self.case_x in range(15):
                  if self.structure[self.case_x][self.case_y -1] != "w":
                     self.case_y -= 1
-                    self.structure[self.case_x][self.case_y] = "M"
                     #self.x = self.case_x * constants.sprite_size
                   
         if direction == "up":
-            if self.case_y in range(14):
+            if self.case_y in range(15):
                 if self.structure[self.case_x -1][self.case_y] != "w":
                     self.case_x -= 1
-                    self.structure[self.case_x][self.case_y] = "M"
                     #self.y = self.case_y * constants.sprite_size
                    
 
         if direction == "down":
-            if self.case_y in range(14):
+            if self.case_y in range(15):
                 if self.structure[self.case_x +1][self.case_y] != "w":             
                     self.case_x += 1
-                    self.structure[self.case_x][self.case_y] = "M"
                     #self.y = self.case_y * constants.sprite_size
          
 
