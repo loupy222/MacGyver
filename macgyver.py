@@ -35,8 +35,8 @@ lab.structure[Mac.case_x][Mac.case_y] = "M"
 pprint(lab.structure)
 
 while game_loop:
+	lab.structure[0][0] = "D"
 	lab.structure[Mac.case_x][Mac.case_y] = " "
-	lab.structure[0][1] = "D"
 	user_answer = input("Quel direction voulez-vous prendre? (up, down, right, left)  ")
 
 	if user_answer == "right":
@@ -51,7 +51,7 @@ while game_loop:
 	if user_answer == "down":
 		Mac.moove("down")
 
-	lab.structure[Mac.case_x][Mac.case_y] = "M"
+	#lab.structure[Mac.case_x][Mac.case_y] = "M"
 	print(Mac.case_x, Mac.case_y)
 	pprint(lab.structure)
 

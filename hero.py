@@ -1,4 +1,4 @@
-from constants import numb_sprites_side
+#from constants import numb_sprites_side
 from pprint import pprint
 
 class Character:
@@ -15,45 +15,48 @@ class Character:
         self.case_y = position[1]
         #self.x = 0
         #self.y = 0
-        #print(self.case_x, self.case_y)
         
     def moove(self, direction):
 
         if direction == "right":
-            if self.case_x < (numb_sprites_side - 1):
+            if self.case_x in range(14):
                 if self.structure[self.case_x][self.case_y +1] != "w":
                     self.case_y += 1
+                    self.structure[self.case_x][self.case_y] = "M"
                     #self.x = self.case_x * constants.sprite_size            
   
         if direction == "left":
-            if self.case_x > 0:
+            if self.case_x in range(14):
                  if self.structure[self.case_x][self.case_y -1] != "w":
                     self.case_y -= 1
+                    self.structure[self.case_x][self.case_y] = "M"
                     #self.x = self.case_x * constants.sprite_size
                   
         if direction == "up":
-            if self.case_y > 0:
+            if self.case_y in range(14):
                 if self.structure[self.case_x -1][self.case_y] != "w":
                     self.case_x -= 1
+                    self.structure[self.case_x][self.case_y] = "M"
                     #self.y = self.case_y * constants.sprite_size
                    
 
         if direction == "down":
-            if self.case_y < (numb_sprites_side -1):
-                if self.structure[self.case_x +1][self.case_y] != "w":
+            if self.case_y in range(14):
+                if self.structure[self.case_x +1][self.case_y] != "w":             
                     self.case_x += 1
+                    self.structure[self.case_x][self.case_y] = "M"
                     #self.y = self.case_y * constants.sprite_size
          
 
     def catch_item(self):
         back_pack = []
-        if [self.case_x][self.case_y] == "T":
+        if self.structure[self.case_x][self.case_y] == "T":
             back_pack.add("tube")
             print("You take ",back_pack, " in your poket!")
-        elif [self.case_x][self.case_y] == "S":            
+        elif self.structure[self.case_x][self.case_y] == "S":            
             back_pack.add("syringe")
             print("You have ",back_pack, " in your poket, now!")
-        elif [self.case_x][self.case_y] == "P":
+        elif self.structure[self.case_x][self.case_y] == "P":
             back_pack.add("poison")
             print("You have ",back_pack, " in your poket, dam it's nice!")
         elif len(back_pack) == 3:
