@@ -52,17 +52,19 @@ while game_loop:
 	elif user_answer == "down":
 		Mac.moove("down")
 
-	elif lab.structure[Mac.case_x][Mac.case_y] == "G":
-		#if Mac.catch_item(True):
-		print("You win")
-		print("MERCI D'AVOIR JOUE")
-		game_loop = False
+	if lab.structure[Mac.case_x][Mac.case_y] == "G":
+		if Mac.catch_item(True):
+			print("You win")
+			print("THANK YOU FOR PLAYING")
+			game_loop = False
+		if Mac.catch_item(False):
+			print("YOU LOOSE! THE GUARDIAN KILL YOU!")
+	else:
+		lab.structure[Mac.case_x][Mac.case_y] = "M"
+		print(Mac.case_x, Mac.case_y)
+		pprint(lab.structure)
+		Mac.catch_item()
 
-
-	lab.structure[Mac.case_x][Mac.case_y] = "M"
-	print(Mac.case_x, Mac.case_y)
-	pprint(lab.structure)
-	Mac.catch_item()
 
 		#elif Mac.catch_item(False):
 		#print("YOU LOOSE!")
