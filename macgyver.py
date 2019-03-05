@@ -5,7 +5,7 @@
 MAIN GAME PAGE
 Script Python
 """
-import os
+
 from labyrinth import Labyrinth
 from hero import Character
 from items import Items
@@ -37,7 +37,7 @@ pprint(lab.structure)
 while game_loop:
 	lab.structure[Mac.case_x][Mac.case_y] = " "
 	lab.structure[0][0] = "D"
-	
+
 	user_answer = input("Quel direction voulez-vous prendre? (up, down, right, left)  ")
 
 	if user_answer == "right":
@@ -57,17 +57,14 @@ while game_loop:
 	pprint(lab.structure)
 	Mac.catch_item()
 
-	if lab.structure[Mac.case_y][Mac.case_x] == 'G':
-		if Mac.catch_item(True):
-			print("You win")
-			game_loop = False
-			print("MERCI D'AVOIR JOUE")
-			g_continue = False
-		elif Mac.catch_item(False):
-			print("YOU LOOSE!")
-	
-os.system("pause")
-g_continue = True
+	if lab.structure[Mac.case_x][Mac.case_y] == 'G':
+		#if Mac.catch_item(True):
+		print("You win")
+		game_loop = False
+		print("MERCI D'AVOIR JOUE")
+
+		#elif Mac.catch_item(False):
+		#print("YOU LOOSE!")
 
 if __name__ == "__main__":
     main()
