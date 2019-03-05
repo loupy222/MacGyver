@@ -33,9 +33,10 @@ lab.structure[tube.case_x][tube.case_y] = "T"
 lab.structure[poison.case_x][poison.case_y] = "P"
 lab.structure[Mac.case_x][Mac.case_y] = "M"
 pprint(lab.structure)
+#print(Mac.back_pack)
 
 while game_loop:
-	#Mac.catch_item()
+	print(Mac.back_pack)
 	lab.structure[Mac.case_x][Mac.case_y] = " "
 	lab.structure[0][0] = "D"
 
@@ -54,17 +55,17 @@ while game_loop:
 		Mac.moove("down")
 
 	if lab.structure[Mac.case_x][Mac.case_y] == "G":
-		"""if Mac.catch_item() == True:"""
-		print("You win")
-		print("THANK YOU FOR PLAYING")
-		game_loop = False
-		"""if Mac.catch_item() == False:
+		if len(Mac.back_pack) == 3:
+			print("You win")
+			print("THANK YOU FOR PLAYING")
+			game_loop = False
+		if len(Mac.back_pack) != 3:
 			print("YOU LOOSE! THE GUARDIAN KILL YOU!")
-			game_loop = False	"""		
+			game_loop = False	
 	else:
+		Mac.catch_item()
 		lab.structure[Mac.case_x][Mac.case_y] = "M"
 		print(Mac.case_x, Mac.case_y)
-		Mac.catch_item()
 		pprint(lab.structure)
-		#Mac.catch_item()
+
 

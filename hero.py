@@ -13,6 +13,8 @@ class Character:
         self.structure = structure
         self.case_x = position[0]
         self.case_y = position[1]
+        back_pack = ()
+        self.back_pack = back_pack
         #self.x = 0
         #self.y = 0
         
@@ -45,24 +47,14 @@ class Character:
 
     def catch_item(self):
 
-        back_pack = []
-        print(back_pack)
-        print(self.case_x, self.case_y)
-        if direction:
-            back_pack.append("tube")
-            print("You take ",back_pack, " in your pocket!")
-            #lab.structure[Mac.case_x][Mac.case_y] = " "
+        if self.structure[self.case_x][self.case_y] == "T":
+            self.back_pack += ("tube",)
+            print("You find ",self.back_pack, " KEEP TI!!")
     
         if self.structure[self.case_x][self.case_y] == "S":            
-            back_pack.append("syringe")
-            print("You have ",back_pack, " in your pocket, now!")
-            #lab.structure[Mac.case_x][Mac.case_y] = " "
+            self.back_pack += ("syringe",)
+            print("You find ",self.back_pack, " in your pocket, now!")
 
         if self.structure[self.case_x][self.case_y] == "P":
-            back_pack.append("poison")
-            print("You have ",back_pack, " in your pocket, dam it's nice!")
-            #lab.structure[Mac.case_x][Mac.case_y] = " "
-        """if len(back_pack) == 3:
-            return True
-        else:
-            return False"""
+            self.back_pack += ("poison",)
+            print("You find ",self.back_pack, " in your pocket, dam it's nice!")
