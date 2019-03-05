@@ -33,7 +33,6 @@ lab.structure[tube.case_x][tube.case_y] = "T"
 lab.structure[poison.case_x][poison.case_y] = "P"
 lab.structure[Mac.case_x][Mac.case_y] = "M"
 pprint(lab.structure)
-#print(Mac.back_pack)
 
 while game_loop:
 	print(Mac.back_pack)
