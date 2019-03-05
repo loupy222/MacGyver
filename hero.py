@@ -44,17 +44,25 @@ class Character:
                     #self.y = self.case_y * constants.sprite_size         
 
     def catch_item(self):
+
         back_pack = []
-        if self.structure[self.case_x][self.case_y] == "T":
+        print(back_pack)
+        print(self.case_x, self.case_y)
+        if direction:
             back_pack.append("tube")
             print("You take ",back_pack, " in your pocket!")
-        elif self.structure[self.case_x][self.case_y] == "S":            
+            #lab.structure[Mac.case_x][Mac.case_y] = " "
+    
+        if self.structure[self.case_x][self.case_y] == "S":            
             back_pack.append("syringe")
             print("You have ",back_pack, " in your pocket, now!")
-        elif self.structure[self.case_x][self.case_y] == "P":
+            #lab.structure[Mac.case_x][Mac.case_y] = " "
+
+        if self.structure[self.case_x][self.case_y] == "P":
             back_pack.append("poison")
             print("You have ",back_pack, " in your pocket, dam it's nice!")
-        if len(back_pack) == 3:
+            #lab.structure[Mac.case_x][Mac.case_y] = " "
+        """if len(back_pack) == 3:
             return True
         else:
-            return False
+            return False"""
