@@ -41,21 +41,20 @@ class Character:
             if self.case_x < (numb_sprites_side - 1):
                 if self.structure[self.case_x +1][self.case_y] != "w":             
                     self.case_x += 1
-                    #self.y = self.case_y * constants.sprite_size
-         
+                    #self.y = self.case_y * constants.sprite_size         
 
     def catch_item(self):
         back_pack = []
         if self.structure[self.case_x][self.case_y] == "T":
-            back_pack.add("tube")
-            print("You take ",back_pack, " in your poket!")
+            back_pack.append("tube")
+            print("You take ",back_pack, " in your pocket!")
         elif self.structure[self.case_x][self.case_y] == "S":            
-            back_pack.add("syringe")
-            print("You have ",back_pack, " in your poket, now!")
+            back_pack.append("syringe")
+            print("You have ",back_pack, " in your pocket, now!")
         elif self.structure[self.case_x][self.case_y] == "P":
-            back_pack.add("poison")
-            print("You have ",back_pack, " in your poket, dam it's nice!")
-        elif len(back_pack) == 3:
+            back_pack.append("poison")
+            print("You have ",back_pack, " in your pocket, dam it's nice!")
+        if len(back_pack) == 3:
             return True
         else:
             return False
