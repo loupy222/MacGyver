@@ -8,6 +8,7 @@ Script Python
 
 from labyrinth import Labyrinth
 from hero import Character
+from guardian import Guardian
 from items import Items
 from pprint import pprint
 
@@ -20,7 +21,7 @@ Creation of game structure, characters and items.
 """
 lab = Labyrinth()
 Mac = Character("Mac", lab.structure, lab.chara_s_position())
-Guardian = Character("Guardian", lab.structure, lab.guardian_s_position())
+Guardian = Guardian("Guardian", lab.structure, lab.guardian_s_position())
 tube = Items("Tube", lab.structure, lab.rand_free_tile())
 syringe = Items("Syringe", lab.structure, lab.rand_free_tile())
 poison = Items("Poison", lab.structure, lab.rand_free_tile())
@@ -37,7 +38,6 @@ pprint(lab.structure)
 while game_loop:
 	print(Mac.back_pack)
 	lab.structure[Mac.case_x][Mac.case_y] = " "
-	lab.structure[0][0] = "D"
 
 	user_answer = input("Quel direction voulez-vous prendre? (up, down, right, left)  ")
 
