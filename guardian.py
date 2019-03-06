@@ -1,7 +1,7 @@
 class Guardian:
     """
-    Class to create the characters whith name,
-    initial position, valid mooves and catch items.
+    Class to create the "Guardian" charater whith name and
+    initial position.
     """ 
 
     def __init__(self, name, structure, position):
