@@ -14,7 +14,7 @@ from pprint import pprint
 
 
 
-print("BIENVENNU Sur MacGyver Scapes")
+print("WELCOME TO MACGYVER SCAPES")
 game_loop = True
 """
 Creation of game structure, characters and items.
@@ -35,13 +35,11 @@ lab.structure[poison.case_x][poison.case_y] = "P"
 lab.structure[Mac.case_x][Mac.case_y] = "M"
 pprint(lab.structure)
 
-controls = GameEvents(Mac)
 
 while game_loop:
 	print(Mac.back_pack)
 	lab.structure[Mac.case_x][Mac.case_y] = " "
-	controls.g_controls()
-	"""user_answer = input("Quel direction voulez-vous prendre? (up, down, right, left)  ")
+	user_answer = input("Which direction do you want to take? (up, down, right, left)  ")
 
 	if user_answer == "right":
 		Mac.moove("right")
@@ -53,7 +51,7 @@ while game_loop:
 		Mac.moove("up")
 
 	elif user_answer == "down":
-		Mac.moove("down")"""
+		Mac.moove("down")
 
 	if lab.structure[Mac.case_x][Mac.case_y] == "G":
 		if len(Mac.back_pack) == 3:
