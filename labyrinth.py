@@ -39,8 +39,7 @@ class Labyrinth:
                     position = x, y
                     return position
 
-
-    """def show(self):
+    def show(self):
         #This method is to display the game board
         wall_picture = pygame.image.load(constants.wall).convert()
         guardian_picture = pygame.image.load(constants.guardian).convert()
@@ -52,4 +51,3 @@ class Labyrinth:
                     graphics.g_board.blit(wall_picture, (position.pixels_x, position.pixels_y))
                 elif self.structure[x][y] == "G":
                     graphics.g_board.blit(guardian_picture,(position.pixels_x, position.pixels_y))
-"""
