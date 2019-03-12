@@ -26,7 +26,7 @@ tube = Items("Tube", lab.structure, lab.rand_free_tile())
 syringe = Items("Syringe", lab.structure, lab.rand_free_tile())
 poison = Items("Poison", lab.structure, lab.rand_free_tile())
 """
-Place characters and items in the game structure.
+Place characters and items in the game structure. (a placer sur modules)
 """
 lab.structure[Guardian.case_x][Guardian.case_y] = "G"
 lab.structure[syringe.case_x][syringe.case_y] = "S"
@@ -39,7 +39,7 @@ pprint(lab.structure)
 while game_loop:
 	print(Mac.back_pack)
 	lab.structure[Mac.case_x][Mac.case_y] = " "
-	user_answer = input("Which direction do you want to take? (up, down, right, left)  ")
+	"""user_answer = input("Which direction do you want to take? (up, down, right, left)  ")
 
 	if user_answer == "right":
 		Mac.moove("right")
@@ -51,7 +51,7 @@ while game_loop:
 		Mac.moove("up")
 
 	elif user_answer == "down":
-		Mac.moove("down")
+		Mac.moove("down") (a remplacer par module)"""
 
 	if lab.structure[Mac.case_x][Mac.case_y] == "G":
 		if len(Mac.back_pack) == 3:

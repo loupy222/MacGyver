@@ -1,4 +1,4 @@
-from pygame import event()
+from pygame import event
 
 
 class GameEvents:
@@ -25,12 +25,11 @@ class GameEvents:
         for event in event.get():                
                    
             if event.type == QUIT:
-                game_loop = False
-                #choice = 0
+                break
                 
             elif event.type == KEYDOWN:                       
                 if event.key == K_ESCAPE:
-                    game_loop = False
+                    break
                             
 
                 elif event.key == K_RIGHT:
