@@ -3,7 +3,6 @@
 numb_sprites_side = 15
 sprite_size = 40
 window_side_size = (40*15)
-window_size = (window_side_size * window_side_size)
 
 """ Characters"""
 

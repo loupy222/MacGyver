@@ -17,6 +17,7 @@ class Character:
         self.back_pack = back_pack
         self.x = 0
         self.y = 0
+        """(ajouter image macgyver)"""
         
     def moove(self, direction):
 

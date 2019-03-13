@@ -1,5 +1,5 @@
-from pygame import event
-
+import pygame
+pygame.init()
 
 class GameEvents:
 
@@ -10,14 +10,12 @@ class GameEvents:
             
         for event in event.get():                
                    
-            if event.type == QUIT:
+            if event.type == pygame.QUIT:
                 break
                 
             elif event.type == KEYDOWN:                       
                 if event.key == K_ESCAPE:
                     break
-                            
-
             elif event.key == K_RIGHT:
                 character.moove('right')
             elif event.key == K_LEFT:
