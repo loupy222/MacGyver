@@ -2,7 +2,7 @@ import pygame.event as event
 
 class GameEvents:
     """
-    Class for imput the user keys, and user evnts.
+    Class for imput the user keys, and user events.
     """
 
     def __init__(self, character):
