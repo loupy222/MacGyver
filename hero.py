@@ -1,4 +1,4 @@
-from constants import numb_sprites_side
+from constants import numb_sprites_side, sprite_size
 from pprint import pprint
 
 class Character:
@@ -25,26 +25,26 @@ class Character:
             if self.case_y < (numb_sprites_side - 1):
                 if self.structure[self.case_x][self.case_y +1] != "w":
                     self.case_y += 1
-                    self.y = self.case_y * constants.sprite_size            
+                    self.y = self.case_y * sprite_size            
   
         if direction == "left":
             if self.case_y >0:
                 if self.structure[self.case_x][self.case_y -1] != "w":
                     self.case_y -= 1
-                    self.y = self.case_y * constants.sprite_size
+                    self.y = self.case_y * sprite_size
                   
         if direction == "up": 
             if self.case_x > 0:
                 if self.structure[self.case_x -1][self.case_y] != "w":
                     self.case_x -= 1
-                    self.x = self.case_x * constants.sprite_size
+                    self.x = self.case_x * sprite_size
                    
 
         if direction == "down":
             if self.case_x < (numb_sprites_side - 1):
                 if self.structure[self.case_x +1][self.case_y] != "w":             
                     self.case_x += 1
-                    self.x = self.case_x * constants.sprite_size         
+                    self.x = self.case_x * sprite_size         
 
     def catch_item(self):
 

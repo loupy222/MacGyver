@@ -42,6 +42,7 @@ game_loop = True
 while game_loop:
 	print(Mac.back_pack)
 	lab.structure[Mac.case_x][Mac.case_y] = " "
+	event.g_controls()
 	"""user_answer = input("Which direction do you want to take? (up, down, right, left)  ")
 
 	if user_answer == "right":
