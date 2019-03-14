@@ -49,11 +49,11 @@ while game_loop:
     direction_key.g_controls()
 
 	if lab.structure[Mac.case_x][Mac.case_y] == "G":
-		if len(Mac.back_pack) == 3:
+		if len(Mac.back_pack) == 4:
 			print("You win")
 			print("THANK YOU FOR PLAYING")
 			game_loop = False
-		if len(Mac.back_pack) != 3:
+		if len(Mac.back_pack) != 4:
 			print("YOU LOOSE! THE GUARDIAN KILL YOU!")
 			game_loop = False	
 	else:

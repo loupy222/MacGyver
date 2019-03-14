@@ -11,7 +11,6 @@ from hero import Character
 from guardian import Guardian
 from items import Items
 from pprint import pprint
-from g_events import GameEvents
 
 
 print("WELCOME TO MACGYVER SCAPES")
@@ -25,7 +24,8 @@ Guardian = Guardian("Guardian", lab.structure, lab.guardian_s_position())
 tube = Items("Tube", lab.structure, lab.rand_free_tile())
 syringe = Items("Syringe", lab.structure, lab.rand_free_tile())
 poison = Items("Poison", lab.structure, lab.rand_free_tile())
-direction_key = GameEvents(Mac)
+needle = Items("Needle", lab.structure, lab.rand_free_tile())
+
 """
 Place characters and items in the game structure. (a placer sur modules)
 """
@@ -34,6 +34,7 @@ lab.structure[syringe.case_x][syringe.case_y] = "S"
 lab.structure[tube.case_x][tube.case_y] = "T"
 lab.structure[poison.case_x][poison.case_y] = "P"
 lab.structure[Mac.case_x][Mac.case_y] = "M"
+lab.structure[needle.case_x][needle.case_y] = "N"
 pprint(lab.structure)
 
 print("WELCOME TO MACGYVER SCAPES")
