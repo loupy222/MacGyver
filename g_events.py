@@ -1,4 +1,5 @@
-import pygame.event as event
+import pygame
+pygame.init()
 
 class GameEvents:
     """
@@ -10,19 +11,20 @@ class GameEvents:
        
     def g_controls (self):
             
-        for event in event.get():                
-                   
-            if event.type == pygame.QUIT:
-                break
-                
-            elif event.type == pygame.KEYDOWN:                       
-                if event.key == pygame.K_ESCAPE:
+        for event in pygame.event.get():                
+               
+            if event.type == KEYDOWN:                       
+                if event.key == K_ESCAPE:
                     break
-            elif event.key == pygame.K_RIGHT:
-                self.character.moove('right')
-            elif event.key == pygame.K_LEFT:
-                self.character.moove('left')
-            elif event.key == pygame.K_UP:
-                self.character.moove('up')
-            elif event.key == pygame.K_DOWN:
-                self.character.moove('down')			
+                elif event.key == K_RIGHT:
+                    self.character.moove('right')
+                    break
+                elif event.key == K_LEFT:
+                    self.character.moove('left')
+                    break
+                elif event.key == K_UP:
+                    self.character.moove('up')
+                    break
+                elif event.key == K_DOWN:
+                    self.character.moove('down')
+                    break			

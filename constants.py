@@ -14,6 +14,7 @@ Mourdoc = "G"
 Tube ="T"
 Syringe = "S"
 Poison = "P"
+Needle = "N"
 
 """Pictures"""
 
@@ -21,12 +22,12 @@ icon_img = "pics/icon_img.jpg"
 home_pic = "pics/home.jpg"
 wall = "pics/wall.png"
 back_img = "pics/back.jpg"
-Mac = "pîcs/macgyver.png"
+Mac = "pîcs/MacGyver.png"
 guardian = "pics/Guardian.png"
 poison = "pics/poison.png"
 tube = "pics/tube.png"
 syringe = "pics/syringe.png"
-
+needle = "pics/needle.png"
 
 """Sentences"""
 

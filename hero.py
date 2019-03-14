@@ -59,3 +59,8 @@ class Character:
         if self.structure[self.case_x][self.case_y] == "P":
             self.back_pack += ("poison",)
             print("You find ",self.back_pack, " In your pocket, IT'S NICE!")
+
+        if self.structure[self.case_x][self.case_y] == "N":
+            self.back_pack += ("needle",)
+            print("You find ",self.back_pack, " In your pocket, cool!")
+

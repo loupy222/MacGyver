@@ -25,7 +25,7 @@ Guardian = Guardian("Guardian", lab.structure, lab.guardian_s_position())
 tube = Items("Tube", lab.structure, lab.rand_free_tile())
 syringe = Items("Syringe", lab.structure, lab.rand_free_tile())
 poison = Items("Poison", lab.structure, lab.rand_free_tile())
-event = GameEvents(Mac)
+direction_key = GameEvents(Mac)
 """
 Place characters and items in the game structure. (a placer sur modules)
 """
@@ -42,8 +42,7 @@ game_loop = True
 while game_loop:
 	print(Mac.back_pack)
 	lab.structure[Mac.case_x][Mac.case_y] = " "
-	event.g_controls()
-	"""user_answer = input("Which direction do you want to take? (up, down, right, left)  ")
+	user_answer = input("Which direction do you want to take? (up, down, right, left)  ")
 
 	if user_answer == "right":
 		Mac.moove("right")
@@ -55,14 +54,14 @@ while game_loop:
 		Mac.moove("up")
 
 	elif user_answer == "down":
-		Mac.moove("down") (a remplacer par module)"""
+		Mac.moove("down")
 
 	if lab.structure[Mac.case_x][Mac.case_y] == "G":
-		if len(Mac.back_pack) == 3:
+		if len(Mac.back_pack) == 4:
 			print("You win")
 			print("THANK YOU FOR PLAYING")
 			game_loop = False
-		if len(Mac.back_pack) != 3:
+		if len(Mac.back_pack) != 4:
 			print("YOU LOOSE! THE GUARDIAN KILL YOU!")
 			game_loop = False	
 	else:
