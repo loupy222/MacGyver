@@ -1,4 +1,5 @@
 from constants import sprite_size, syringe
+from pygame import display
 
 class Syringe:
 

@@ -1,6 +1,5 @@
 from random import randint
 import constants
-import pygame
 
 
 class Labyrinth:

@@ -1,4 +1,5 @@
 from constants import sprite_size, guardian
+from pygame import display
 
 class Guardian:
     """

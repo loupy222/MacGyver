@@ -1,4 +1,5 @@
 from constants import sprite_size, tube
+from pygame import display
 
 class Tube:
 

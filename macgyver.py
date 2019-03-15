@@ -15,15 +15,19 @@ from poison import Poison
 from needle import Needle
 from pprint import pprint
 from g_events import GameEvents
-from game_display import GameDisplay
-from constants import g_board
+from lab_display import LabDisplay
 import pygame
 pygame.init()
 
-g_board()
+"""
+Creation of the main window 
+ """
 
+g_board = pygame.display.set_mode((constants.window_side_size, constants.window_side_size))
+icon = pygame.image.load(constants.icon_img)
+pygame.display.set_icon(icon)
+pygame.display.set_caption(constants.Title)
 
-print("WELCOME TO MACGYVER SCAPES")
 game_loop = True
 """
 Creation of game structure, characters and items.
@@ -35,9 +39,7 @@ tube = Tube("Tube", lab.structure, lab.rand_free_tile())
 syringe = Syringe("Syringe", lab.structure, lab.rand_free_tile())
 poison = Poison("Poison", lab.structure, lab.rand_free_tile())
 needle = Needle("Needle", lab.structure, lab.rand_free_tile())
-direction_key = GameEvents(Mac)
-controls = direction_key.g_controls()
-lab_display = GameDisplay(lab)
+
 
 pprint(lab.structure)
 

@@ -1,5 +1,6 @@
 from constants import numb_sprites_side, sprite_size, mac
 from pprint import pprint
+from pygame import display
 
 class Character:
     """

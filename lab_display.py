@@ -1,17 +1,11 @@
 
 import constants
-import pygame
-pygame.init()
+from pygame import display
 
 class LabDisplay:
     """
     Class for create the window and the game structure.
     """
-    g_board = pygame.display.set_mode((constants.window_side_size, constants.window_side_size))
-    icon = pygame.image.load(constants.icon_img)
-    pygame.display.set_icon(icon)
-    pygame.display.set_caption(constants.Title)
-
     """
     This method loads the images from "constants" and place tehm on 
     """
