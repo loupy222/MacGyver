@@ -1,4 +1,4 @@
-from constants import numb_sprites_side, sprite_size
+from constants import numb_sprites_side, sprite_size, mac
 from pprint import pprint
 
 class Character:
@@ -15,8 +15,11 @@ class Character:
         self.case_y = position[1]
         back_pack = ()
         self.back_pack = back_pack
+        self.structure[self.case_x][self.case_y] = "M"
+        self.picture = pygame.image.load(mac).convert()
         self.x = 0
         self.y = 0
+
         """(ajouter image macgyver)"""
         
     def moove(self, direction):

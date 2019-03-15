@@ -13,10 +13,9 @@ class GameEvents:
             
         for event in pygame.event.get():                
                
-            if event.type == KEYDOWN:                       
-                if event.key == K_ESCAPE:
-                    break
-                elif event.key == K_RIGHT:
+            if event.type == KEYDOWN:                
+
+                if event.key == K_RIGHT:
                     self.character.moove('right')
                     break
                 elif event.key == K_LEFT:

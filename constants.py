@@ -1,3 +1,5 @@
+from pygame import display
+
 """GAME Constants"""
 
 numb_sprites_side = 15
@@ -22,7 +24,7 @@ icon_img = "pics/icon_img.jpg"
 home_pic = "pics/home.jpg"
 wall = "pics/wall.png"
 back_img = "pics/back.jpg"
-Mac = "pîcs/MacGyver.png"
+mac = "pics/Mac.png"
 guardian = "pics/Guardian.png"
 poison = "pics/poison.png"
 tube = "pics/tube.png"
