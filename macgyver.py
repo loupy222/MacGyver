@@ -16,6 +16,7 @@ from needle import Needle
 from pprint import pprint
 from g_events import GameEvents
 import pygame
+from pygame.locals import *
 pygame.init()
 
 """
@@ -39,7 +40,7 @@ tube = Tube("Tube", lab.structure, lab.rand_free_tile())
 syringe = Syringe("Syringe", lab.structure, lab.rand_free_tile())
 poison = Poison("Poison", lab.structure, lab.rand_free_tile())
 needle = Needle("Needle", lab.structure, lab.rand_free_tile())
-g_event = GameEvents
+g_event = GameEvents(Mac, window)
 while game_loop:
 
 	pygame.time.Clock().tick(30)
@@ -48,7 +49,7 @@ while game_loop:
 	Mac.picture
 	print(Mac.back_pack)
 	lab.structure[Mac.case_x][Mac.case_y] = " "
-	g_event.g_controls(Mac)
+	g_event
 
 
 	if lab.structure[Mac.case_x][Mac.case_y] == "G":
@@ -62,7 +63,7 @@ while game_loop:
 	else:
 		window.blit(back_ground, (0,0))
 		lab.lab_display(window)
-		window.blit(Mac.moove, (Mac.x, Mac.y))
+		window.blit(Mac.picture, (Mac.x, Mac.y))
 		pygame.display.flip()
 		Mac.catch_item()
 		lab.structure[Mac.case_x][Mac.case_y] = "M"

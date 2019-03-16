@@ -1,4 +1,5 @@
 import pygame
+from pygame.locals import *
 pygame.init()
 
 class GameEvents:
@@ -6,11 +7,7 @@ class GameEvents:
     Class for imput the user keys, and user events.
     """
 
-    def __init__(self):
-        pass
-
-       
-    def g_controls (self, character):
+    def __init__(self, character, window):
         self.character = character
             
         for event in pygame.event.get():                
@@ -19,13 +16,14 @@ class GameEvents:
 
                 if event.key == K_RIGHT:
                     self.character.moove('right')
-                    break
+                    
                 elif event.key == K_LEFT:
                     self.character.moove('left')
-                    break
+                   
                 elif event.key == K_UP:
                     self.character.moove('up')
-                    break
+                    
                 elif event.key == K_DOWN:
-                    self.character.moove('down')
-                    break			
+                    self.character.moove('down')                
+
+       
