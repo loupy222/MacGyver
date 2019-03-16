@@ -53,8 +53,8 @@ class Labyrinth:
 
         for x, line in enumerate(self.structure):
             for y, letter in enumerate(line):
-                x = x * sprite_size
-                y = y * sprite_size
+                """x = x * sprite_size
+                y = y * sprite_size"""
                 if self.structure[x][y] == "D":
                     window.blit(departure, (x,y))
                 elif self.structure[x][y] == "w":

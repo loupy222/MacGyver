@@ -6,10 +6,12 @@ class GameEvents:
     Class for imput the user keys, and user events.
     """
 
-    def __init__(self, character):
-        self.character = character
+    def __init__(self):
+        pass
+
        
-    def g_controls (self):
+    def g_controls (self, character):
+        self.character = character
             
         for event in pygame.event.get():                
                

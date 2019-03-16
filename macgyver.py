@@ -39,14 +39,17 @@ tube = Tube("Tube", lab.structure, lab.rand_free_tile())
 syringe = Syringe("Syringe", lab.structure, lab.rand_free_tile())
 poison = Poison("Poison", lab.structure, lab.rand_free_tile())
 needle = Needle("Needle", lab.structure, lab.rand_free_tile())
-
+g_event = GameEvents
 while game_loop:
+
+	pygame.time.Clock().tick(30)
 
 	lab.lab_display(window)
 	Mac.picture
 	print(Mac.back_pack)
 	lab.structure[Mac.case_x][Mac.case_y] = " "
-	print("Which direction do you want to take? (up, down, right, left)  ")
+	g_event.g_controls(Mac)
+
 
 	if lab.structure[Mac.case_x][Mac.case_y] == "G":
 		if len(Mac.back_pack) == 4:
@@ -57,8 +60,12 @@ while game_loop:
 			print("YOU LOOSE! THE GUARDIAN KILL YOU!")
 			game_loop = False	
 	else:
+		window.blit(back_ground, (0,0))
+		lab.lab_display(window)
+		window.blit(Mac.moove, (Mac.x, Mac.y))
+		pygame.display.flip()
 		Mac.catch_item()
 		lab.structure[Mac.case_x][Mac.case_y] = "M"
 		print(Mac.case_x, Mac.case_y)
-		pprint(lab.structure)
+
 
