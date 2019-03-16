@@ -1,5 +1,6 @@
 from constants import sprite_size, needle
-from pygame import display
+import pygame
+from pygame.locals import *
 
 class Needle:
 

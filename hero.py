@@ -1,6 +1,7 @@
-from constants import numb_sprites_side, sprite_size, mac
+from constants import numb_sprites_side, sprite_size, mac_img
 from pprint import pprint
-from pygame import display
+import pygame
+from pygame.locals import * 
 
 class Character:
     """
@@ -17,7 +18,7 @@ class Character:
         back_pack = ()
         self.back_pack = back_pack
         self.structure[self.case_x][self.case_y] = "M"
-        self.picture = pygame.image.load(mac).convert()
+        self.picture = pygame.image.load(mac_img).convert()
         self.x = 0
         self.y = 0
 

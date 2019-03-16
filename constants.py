@@ -9,7 +9,7 @@ window_side_size = 600  #(numb_sprites_side * sprite_size)
 """ Characters"""
 
 MacGyver = "M"
-Mourdoc = "G"
+Guardian = "G"
 
 """Items"""
 
@@ -22,14 +22,15 @@ Needle = "N"
 
 icon_img = "pics/icon_img.jpg"
 home_pic = "pics/home.jpg"
-wall = "pics/wall.png"
+wall_img = "pics/wall.png"
 back_img = "pics/back.jpg"
-mac = "pics/Mac.png"
-guardian = "pics/Guardian.png"
+mac_img = "pics/Mac.png"
+guardian_img = "pics/Guardian.png"
 poison = "pics/poison.png"
 tube = "pics/tube.png"
 syringe = "pics/syringe.png"
 needle = "pics/needle.png"
+departure_img = "pics/departure.png"
 
 """Sentences"""
 

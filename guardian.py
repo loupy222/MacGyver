@@ -1,5 +1,6 @@
-from constants import sprite_size, guardian
-from pygame import display
+from constants import sprite_size, guardian_img
+import pygame
+from pygame.locals import *
 
 class Guardian:
     """
@@ -14,6 +15,6 @@ class Guardian:
         self.case_x = position[0]
         self.case_y = position[1]
         self.structure[self.case_x][self.case_y] = "G"
-        self.picture = pygame.image.load(guardian).convert()
+        """self.picture = pygame.image.load(guardian_img).convert()
         self.x = self.case_x * sprite_size
-        self.y = self.case_y * sprite_size
+        self.y = self.case_y * sprite_size"""

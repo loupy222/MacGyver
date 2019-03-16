@@ -5,7 +5,7 @@
 MAIN GAME PAGE
 Script Python
 """
-
+import constants
 from labyrinth import Labyrinth
 from hero import Character
 from guardian import Guardian
@@ -15,7 +15,6 @@ from poison import Poison
 from needle import Needle
 from pprint import pprint
 from g_events import GameEvents
-from lab_display import LabDisplay
 import pygame
 pygame.init()
 
@@ -23,10 +22,11 @@ pygame.init()
 Creation of the main window 
  """
 
-g_board = pygame.display.set_mode((constants.window_side_size, constants.window_side_size))
+window = pygame.display.set_mode((constants.window_side_size, constants.window_side_size))
 icon = pygame.image.load(constants.icon_img)
 pygame.display.set_icon(icon)
 pygame.display.set_caption(constants.Title)
+back_ground = pygame.image.load(constants.back_img).convert()
 
 game_loop = True
 """
@@ -40,10 +40,10 @@ syringe = Syringe("Syringe", lab.structure, lab.rand_free_tile())
 poison = Poison("Poison", lab.structure, lab.rand_free_tile())
 needle = Needle("Needle", lab.structure, lab.rand_free_tile())
 
-
-pprint(lab.structure)
-
 while game_loop:
+
+	lab.lab_display(window)
+	Mac.picture
 	print(Mac.back_pack)
 	lab.structure[Mac.case_x][Mac.case_y] = " "
 	print("Which direction do you want to take? (up, down, right, left)  ")

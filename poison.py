@@ -1,5 +1,6 @@
 from constants import sprite_size, poison
-from pygame import display
+import pygame
+from pygame.locals import *
 
 class Poison:
 

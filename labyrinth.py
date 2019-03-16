@@ -1,5 +1,7 @@
 from random import randint
-import constants
+from constants import sprite_size, wall_img, departure_img, guardian_img
+import pygame
+from pygame.locals import * 
 
 
 class Labyrinth:
@@ -39,4 +41,24 @@ class Labyrinth:
                 if self.structure[x][y] == "A":
                     position = x, y
                     return position
+
+    def lab_display(self, window):
+        """
+        This method loads the images from "constants" and place them on structure
+        """
+
+        wall = pygame.image.load(wall_img).convert()
+        departure = pygame.image.load(departure_img).convert()
+        guardian = pygame.image.load(guardian_img).convert()
+
+        for x, line in enumerate(self.structure):
+            for y, letter in enumerate(line):
+                x = x * sprite_size
+                y = y * sprite_size
+                if self.structure[x][y] == "D":
+                    window.blit(departure, (x,y))
+                elif self.structure[x][y] == "w":
+                    window.blit(wall, (x,y))
+                elif self.structure[x][y] == "A":
+                    window.blit(guardian, (x,y))
 
