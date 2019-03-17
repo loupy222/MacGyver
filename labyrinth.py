@@ -1,5 +1,5 @@
 from random import randint
-from constants import sprite_size, wall_img, departure_img, guardian_img
+import constants
 import pygame
 from pygame.locals import * 
 
@@ -29,17 +29,17 @@ class Labyrinth:
         return rand_line, rand_tile
  
     def chara_s_position(self):    
-        for x, line in enumerate(self.structure):
-            for y, letter in enumerate(line):
-                if self.structure[x][y] == "D":
-                    position = x, y
+        for y, line in enumerate(self.structure):
+            for x, letter in enumerate(line):
+                if self.structure[y][x] == "D":
+                    position = y, x
                     return position
     
     def guardian_s_position(self):    
-        for x, line in enumerate(self.structure):
-            for y, letter in enumerate(line):
-                if self.structure[x][y] == "A":
-                    position = x, y
+        for y, line in enumerate(self.structure):
+            for x, letter in enumerate(line):
+                if self.structure[y][x] == "A":
+                    position = y, x
                     return position
 
     def lab_display(self, window):
@@ -47,18 +47,36 @@ class Labyrinth:
         This method loads the images from "constants" and place them on structure
         """
 
-        wall = pygame.image.load(wall_img).convert()
-        departure = pygame.image.load(departure_img).convert()
-        guardian = pygame.image.load(guardian_img).convert()
+        wall = pygame.image.load(constants.wall_img).convert_alpha()
+        departure = pygame.image.load(constants.departure_img).convert_alpha()
+        tube =pygame.image.load(constants.tube_img).convert_alpha()
+        syringe = pygame.image.load(constants.syringe_img).convert_alpha()
+        needle = pygame.image.load(constants.needle_img).convert_alpha()
+        guardian = pygame.image.load(constants.guardian_img).convert_alpha()
+        poison = pygame.image.load(constants.poison_img).convert_alpha()
+        
 
-        for x, line in enumerate(self.structure):
-            for y, letter in enumerate(line):
-                """x = x * sprite_size
-                y = y * sprite_size"""
-                if self.structure[x][y] == "D":
-                    window.blit(departure, (x,y))
-                elif self.structure[x][y] == "w":
-                    window.blit(wall, (x,y))
-                elif self.structure[x][y] == "A":
-                    window.blit(guardian, (x,y))
+        line = 0
+        for ligne in self.structure:
+            case = 0
+            for sprite in ligne:
+                y = case * constants.sprite_size
+                x = line * constants.sprite_size
+                if sprite == 'w':
+                    window.blit(wall, (y,x))
+                elif sprite == 'D':
+                    window.blit(departure, (y,x))
+                elif sprite == 'T':
+                    window.blit(tube, (y,x))
+                elif sprite == 'S':
+                    window.blit(syringe, (y,x))
+                elif sprite == 'N':
+                    window.blit(needle, (y,x))
+                elif sprite == "G":
+                    window.blit(guardian, (y,x))
+                elif sprite == 'P':
+                    window.blit(poison, (y,x))
+                case += 1
+            line += 1
+
 

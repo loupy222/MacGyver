@@ -1,6 +1,4 @@
-from constants import sprite_size, needle
-import pygame
-from pygame.locals import *
+from constants import sprite_size
 
 class Needle:
 
@@ -8,9 +6,7 @@ class Needle:
         self.name = name
         self.position = position
         self.structure = structure
-        self.case_x = position[0]
-        self.case_y = position[1]
-        self.structure[self.case_x][self.case_y] = "N"
-        self.picture = pygame.image.load(needle).convert()
-        self.x = self.case_x * sprite_size
-        self.y = self.case_y * sprite_size
+        self.case_y = position[0]
+        self.case_x = position[1]
+        self.structure[self.case_y][self.case_x] = "N"
+
