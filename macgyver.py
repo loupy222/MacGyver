@@ -44,10 +44,8 @@ Title = Mac.catch_item()
 pygame.display.flip()
 
 while game_loop:
-	pygame.display.flip()
-
-	pygame.time.Clock().tick(30)
-
+	pprint(lab.structure)
+	pygame.time.Clock().tick(60)
 	lab.lab_display(window)
 	print(Mac.back_pack)
 	lab.structure[Mac.case_y][Mac.case_x] = " "
@@ -57,13 +55,13 @@ while game_loop:
 		elif event.type == KEYDOWN:
 			if event.key == K_ESCAPE:
 				game_loop = False
-			elif event.key == K_RIGHT:
-				Mac.moove('right')
-			elif event.key == K_LEFT:
-				Mac.moove('left')
-			elif event.key == K_UP:
-				Mac.moove('up')
 			elif event.key == K_DOWN:
+				Mac.moove('right')
+			elif event.key == K_UP:
+				Mac.moove('left')
+			elif event.key == K_LEFT:
+				Mac.moove('up')
+			elif event.key == K_RIGHT:
 				Mac.moove('down')
 
 	if lab.structure[Mac.case_y][Mac.case_x] == "G":
@@ -77,7 +75,7 @@ while game_loop:
 	else:
 		window.blit(back_ground, (0,0))
 		lab.lab_display(window)
-		window.blit(Mac.picture, (Mac.y, Mac.x))
+		window.blit(Mac.picture, (Mac.x, Mac.y))
 		pygame.display.flip()
 		Mac.catch_item()
 		lab.structure[Mac.case_y][Mac.case_x] = "M"
