@@ -1,4 +1,4 @@
-from constants import numb_sprites_side, sprite_size, mac_img
+from constants import numb_sprites_side, sprite_size, mac_img, syringe_img, tube_img, poison_img, needle_img, backpack_img
 import pygame
 from pygame.locals import *
 
@@ -49,21 +49,38 @@ class Character:
                     self.case_x += 1
                     self.x = self.case_x * sprite_size         
 
-    def catch_item(self):
+    def catch_item(self, window):
+        tube =pygame.image.load(tube_img).convert_alpha()
+        syringe = pygame.image.load(syringe_img).convert_alpha()
+        needle = pygame.image.load(needle_img).convert_alpha()
+        poison = pygame.image.load(poison_img).convert_alpha()
+        backpack = pygame.image.load(backpack_img).convert()
+        window.blit(backpack, (0, 560))
+        """window.blit(tube, (200, 560))
+        window.blit(syringe, (240, 560))
+        window.blit(poison, (280, 560))
+        window.blit(needle, (320, 560))"""
 
         if self.structure[self.case_y][self.case_x] == "T":
             self.back_pack += ("tube",)
+            window.blit(tube, (200, 560))
             print("You find ",self.back_pack, " KEEP TI!!")
-    
+        
         if self.structure[self.case_y][self.case_x] == "S":            
             self.back_pack += ("syringe",)
+            window.blit(syringe, (240, 560))
+ 
             print("You find ",self.back_pack, " In your pocket!! NOW!")
 
         if self.structure[self.case_y][self.case_x] == "P":
             self.back_pack += ("poison",)
+            window.blit(poison, (280, 560))
+
             print("You find ",self.back_pack, " In your pocket, IT'S NICE!")
 
         if self.structure[self.case_y][self.case_x] == "N":
             self.back_pack += ("needle",)
+            window.blit(needle, (320, 560))
+
             print("You find ",self.back_pack, " In your pocket, cool!")
 

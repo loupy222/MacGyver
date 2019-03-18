@@ -64,6 +64,7 @@ class GameLoops:
 
         back_ground = pygame.image.load(constants.back_img).convert_alpha()
         win_img = pygame.image.load(constants.win_img).convert_alpha()
+        loose_img = pygame.image.load(constants.youloose_img).convert_alpha()
         lab = Labyrinth()
         lab.lab_display(self.window)
         Mac = Character("Mac", lab.structure, lab.chara_s_position())
@@ -76,8 +77,9 @@ class GameLoops:
         game_loop = True
 
         while game_loop:
+            pygame.display.flip()
             pygame.mixer.unpause()
-            sound.play(loops=1, maxtime=0, fade_ms=0)
+            self.sound.play(loops=1, maxtime=0, fade_ms=0)
             pygame.time.Clock().tick(60)
             lab.lab_display(self.window)
             print(Mac.back_pack)
@@ -113,14 +115,26 @@ class GameLoops:
                         pygame.display.flip()
 
                 if len(Mac.back_pack) != 4:
+                    self.sound.stop()
+                    game_loop = False
+                    loose = True
+                    while loose:
+                        for event in pygame.event.get():
+                            if event.type == QUIT:
+                                loose = False
+                            elif event.type == KEYDOWN:
+                                if event.key != K_ESCAPE:
+                                    loose = False
+                        self.window.blit(loose_img, (0,0))
+                        pygame.display.flip()
+
                     print("YOU LOOSE! THE GUARDIAN KILL YOU!")
                     game_loop = False
     
             self.window.blit(back_ground, (0,0))
             lab.lab_display(self.window)
             self.window.blit(Mac.picture, (Mac.x, Mac.y))
-            pygame.display.flip()
-            Mac.catch_item()
+            Mac.catch_item(self.window)
             lab.structure[Mac.case_y][Mac.case_x] = "M"
 
 Loop = GameLoops()
