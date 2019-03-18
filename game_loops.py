@@ -77,6 +77,7 @@ class GameLoops:
 
         while game_loop:
             pygame.mixer.unpause()
+            sound.play(loops=1, maxtime=0, fade_ms=0)
             pygame.time.Clock().tick(60)
             lab.lab_display(self.window)
             print(Mac.back_pack)
