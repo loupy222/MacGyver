@@ -19,6 +19,7 @@ tube_img = "pics/tube.png"
 syringe_img = "pics/syringe.png"
 needle_img = "pics/needle.png"
 departure_img = "pics/departure.png"
+win_img = "pics/YouWin.png"
 
 """Sentences"""
 

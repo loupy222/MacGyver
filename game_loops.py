@@ -14,9 +14,12 @@ pygame.init()
 
 
 class GameLoops:
+    """
+    Creation of all loops game
+    """
 
     def __init__ (self):
-        pass
+
         """
         Creation of the main window 
         """
@@ -25,37 +28,42 @@ class GameLoops:
         icon = pygame.image.load(constants.icon_img)
         pygame.display.set_icon(icon)
         pygame.display.set_caption(constants.Title)
-
-
-        """
-        Creation of game structure, characters and items.
-        """
+        self.sound = pygame.mixer.Sound("sound/Mac.wav")
 
     def home_loops (self):
+        """
+        Home loop for the welcome window
+        """
         home_pic = pygame.image.load(constants.home_pic).convert()
 
         home_loop = True
         game_loop = False
         while home_loop:
             self.window.blit(home_pic, (0,0))
+            self.sound.play()
             pygame.display.flip()
             for event in pygame.event.get():
                 if event.type == QUIT:
                     home_loop = False
+                    self.sound.stop()
                 elif event.type == KEYDOWN:
                     if event.key == K_ESCAPE:
                         game_loop = False
                         home_loop = True
+                        pygame.mixer.pause()
                     elif event.key != K_ESCAPE:
                         home_loop = False
                         game_loop = True
+                        pygame.mixer.pause()
 
     def game_loops (self):
         """
+        Main game loop
         Creation of game structure, characters and items.
         """
 
-        back_ground = pygame.image.load(constants.back_img).convert()
+        back_ground = pygame.image.load(constants.back_img).convert_alpha()
+        win_img = pygame.image.load(constants.win_img).convert_alpha()
         lab = Labyrinth()
         lab.lab_display(self.window)
         Mac = Character("Mac", lab.structure, lab.chara_s_position())
@@ -68,6 +76,7 @@ class GameLoops:
         game_loop = True
 
         while game_loop:
+            pygame.mixer.unpause()
             pygame.time.Clock().tick(60)
             lab.lab_display(self.window)
             print(Mac.back_pack)
@@ -89,9 +98,19 @@ class GameLoops:
 
             if lab.structure[Mac.case_y][Mac.case_x] == "G":
                 if len(Mac.back_pack) == 4:
-                    print("You win")
-                    print("THANK YOU FOR PLAYING")
+                    self.sound.stop()
                     game_loop = False
+                    win = True
+                    while win:
+                        for event in pygame.event.get():
+                            if event.type == QUIT:
+                                win = False
+                            elif event.type == KEYDOWN:
+                                if event.key != K_ESCAPE:
+                                    win = False
+                        self.window.blit(win_img, (0,0))
+                        pygame.display.flip()
+
                 if len(Mac.back_pack) != 4:
                     print("YOU LOOSE! THE GUARDIAN KILL YOU!")
                     game_loop = False
