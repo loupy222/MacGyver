@@ -23,7 +23,7 @@ class GameLoops:
         Creation of the main window and game sounds.
         """
 
-        self.window = pygame.display.set_mode((constants.window_side_size, constants.window_side_size))
+        self.window = pygame.display.set_mode((600, 640))
         icon = pygame.image.load(constants.icon_img)
         pygame.display.set_icon(icon)
         pygame.display.set_caption(constants.Title)
@@ -138,7 +138,3 @@ class GameLoops:
             self.window.blit(Mac.picture, (Mac.x, Mac.y))
             Mac.catch_item(self.window)
             lab.structure[Mac.case_y][Mac.case_x] = "M"
-
-Loop = GameLoops()
-Home = Loop.home_loops()
-Game = Loop.game_loops()

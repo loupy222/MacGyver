@@ -1,4 +1,4 @@
-from constants import numb_sprites_side, sprite_size, mac_img, syringe_img, tube_img, poison_img, needle_img, backpack_img
+from constants import numb_sprites_side, sprite_size, mac_img, syringe_img, tube_img, poison_img, needle_img, backpack_img, full_img
 import pygame
 from pygame.locals import *
 
@@ -55,11 +55,8 @@ class Character:
         needle = pygame.image.load(needle_img).convert_alpha()
         poison = pygame.image.load(poison_img).convert_alpha()
         backpack = pygame.image.load(backpack_img).convert()
-        window.blit(backpack, (0, 560))
-        """window.blit(tube, (200, 560))
-        window.blit(syringe, (240, 560))
-        window.blit(poison, (280, 560))
-        window.blit(needle, (320, 560))"""
+        full = pygame.image.load(full_img).convert_alpha()
+        window.blit(backpack, (0, 600))
 
         if self.structure[self.case_y][self.case_x] == "T":
             self.back_pack += ("tube",)
@@ -84,13 +81,15 @@ class Character:
         for elem in self.back_pack:
 
             if elem == "tube" :
-                window.blit(tube, (200, 560))
+                window.blit(tube, (380, 600))
             if elem == "needle":
-                window.blit(needle, (320, 560))
+                window.blit(needle, (420, 600))
             if elem == "poison":
-                window.blit(poison, (280, 560))
+                window.blit(poison, (480, 600))
             if elem == "syringe":
-                window.blit(syringe, (240, 560))
+                window.blit(syringe, (520, 600))
+            if len(self.back_pack) == 4:
+                window.blit(full, (210, 600))
 
 
 

@@ -6,8 +6,11 @@ MAIN GAME PAGE
 Script Python
 """
 
-from game_loops import Home, Game
+from game_loops import GameLoops
 
+Loop = GameLoops()
+Home = Loop.home_loops()
+Game = Loop.game_loops()
 
 def game ():
 

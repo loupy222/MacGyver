@@ -22,7 +22,7 @@ departure_img = "pics/departure.png"
 win_img = "pics/YouWin.png"
 backpack_img = "pics/backpack.png"
 youloose_img = "pics/YouLoose.png"
-
+full_img = "pics/full.png"
 """Sentences"""
 
 Title = "MACGYVER SCAPES"
