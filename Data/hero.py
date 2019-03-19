@@ -1,4 +1,4 @@
-from Data.constants import numb_sprites_side, sprite_size, mac_img, syringe_img, tube_img, poison_img, needle_img, backpack_img, full_img
+from Data.constants import numb_sprites_side, sprite_size, mac_img, cool_img, yeah_img, yes_img, syringe_img, tube_img, poison_img, needle_img, backpack_img, full_img
 import pygame
 from pygame.locals import *
 
@@ -56,27 +56,22 @@ class Character:
         poison = pygame.image.load(poison_img).convert_alpha()
         backpack = pygame.image.load(backpack_img).convert()
         full = pygame.image.load(full_img).convert_alpha()
+        yes = pygame.image.load(yes_img).convert_alpha()
+        yeah = pygame.image.load(yeah_img).convert_alpha()
+        cool = pygame.image.load(cool_img).convert_alpha()
         window.blit(backpack, (0, 600))
 
         if self.structure[self.case_y][self.case_x] == "T":
             self.back_pack += ("tube",)
-            
-            print("You find ",self.back_pack, " KEEP TI!!")
         
         if self.structure[self.case_y][self.case_x] == "S":            
             self.back_pack += ("syringe",)
  
-            print("You find ",self.back_pack, " In your pocket!! NOW!")
-
         if self.structure[self.case_y][self.case_x] == "P":
             self.back_pack += ("poison",)
 
-            print("You find ",self.back_pack, " In your pocket, IT'S NICE!")
-
         if self.structure[self.case_y][self.case_x] == "N":
             self.back_pack += ("needle",)
-
-            print("You find ",self.back_pack, " In your pocket, cool!")
 
         for elem in self.back_pack:
 
@@ -90,6 +85,13 @@ class Character:
                 window.blit(syringe, (520, 600))
             if len(self.back_pack) == 4:
                 window.blit(full, (210, 600))
+            if len(self.back_pack) == 3:
+                window.blit(yes, (210, 600))
+            if len(self.back_pack) == 2:
+                window.blit(cool, (210, 600))
+            if len(self.back_pack) == 1:
+                window.blit(yeah, (210, 600)) 
+            
 
 
 
