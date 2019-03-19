@@ -7,7 +7,6 @@ from syringe import Syringe
 from poison import Poison
 from needle import Needle
 from pprint import pprint
-from g_events import GameEvents
 import pygame
 from pygame.locals import *
 pygame.init()

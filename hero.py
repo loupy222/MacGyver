@@ -63,7 +63,7 @@ class Character:
 
         if self.structure[self.case_y][self.case_x] == "T":
             self.back_pack += ("tube",)
-            window.blit(tube, (200, 560))
+            
             print("You find ",self.back_pack, " KEEP TI!!")
         
         if self.structure[self.case_y][self.case_x] == "S":            
@@ -83,4 +83,10 @@ class Character:
             window.blit(needle, (320, 560))
 
             print("You find ",self.back_pack, " In your pocket, cool!")
+
+        for elem in self.back_pack:
+
+            if elem == "tube" :
+                window.blit(tube, (200, 560))
+
 
