@@ -11,7 +11,7 @@ There is only one level. The structure (departure, location of the walls, arriva
 
 MacGyver is controlled by the arrow keys on the keyboard.
 
-Objects arz randomly assigned to the maze and will change locations if the user closes the game and raises.
+Objects are randomly assigned to the maze and will change locations if the user closes the game and raises.
 
 MacGyver move from box to box, with 15 boxes on the length of the window!
 He will retrieve an object simply by moving on it.
