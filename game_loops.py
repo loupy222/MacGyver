@@ -21,7 +21,7 @@ class GameLoops:
     def __init__ (self):
 
         """
-        Creation of the main window 
+        Creation of the main window and game sounds.
         """
 
         self.window = pygame.display.set_mode((constants.window_side_size, constants.window_side_size))
@@ -31,10 +31,10 @@ class GameLoops:
         self.sound = pygame.mixer.Sound("sound/Mac.wav")
         self.sound_loose = pygame.mixer.Sound("sound/loose.wav")
         self.sound_win = pygame.mixer.Sound("sound/win.wav")
-        
+
     def home_loops (self):
         """
-        Home loop for the welcome window
+        Home loop for the welcome window with sound.
         """
         home_pic = pygame.image.load(constants.home_pic).convert()
 
