@@ -90,8 +90,4 @@ class Character:
             if len(self.back_pack) == 2:
                 window.blit(cool, (210, 600))
             if len(self.back_pack) == 1:
-                window.blit(yeah, (210, 600)) 
-            
-
-
-
+                window.blit(yeah, (210, 600))    

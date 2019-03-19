@@ -26,6 +26,7 @@ full_img = "pics/full.png"
 yeah_img = "pics/yeah.png"
 yes_img = "pics/yes.png"
 cool_img = "pics/cool.png"
+
 """Sentences"""
 
 Title = "MACGYVER SCAPES"
