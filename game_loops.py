@@ -29,7 +29,8 @@ class GameLoops:
         pygame.display.set_icon(icon)
         pygame.display.set_caption(constants.Title)
         self.sound = pygame.mixer.Sound("sound/Mac.wav")
-
+        self.sound_loose = pygame.mixer.Sound("sound/loose.wav")
+        self.sound_win = pygame.mixer.sound("sound/win.wav")
     def home_loops (self):
         """
         Home loop for the welcome window
@@ -105,6 +106,7 @@ class GameLoops:
                     game_loop = False
                     win = True
                     while win:
+                        self.sound_win.play()
                         for event in pygame.event.get():
                             if event.type == QUIT:
                                 win = False
@@ -119,6 +121,7 @@ class GameLoops:
                     game_loop = False
                     loose = True
                     while loose:
+                        self.sound_loose.play()
                         for event in pygame.event.get():
                             if event.type == QUIT:
                                 loose = False
@@ -129,7 +132,6 @@ class GameLoops:
                         pygame.display.flip()
 
                     print("YOU LOOSE! THE GUARDIAN KILL YOU!")
-                    game_loop = False
     
             self.window.blit(back_ground, (0,0))
             lab.lab_display(self.window)
