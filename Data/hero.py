@@ -1,4 +1,4 @@
-from constants import numb_sprites_side, sprite_size, mac_img, syringe_img, tube_img, poison_img, needle_img, backpack_img, full_img
+from Data.constants import numb_sprites_side, sprite_size, mac_img, syringe_img, tube_img, poison_img, needle_img, backpack_img, full_img
 import pygame
 from pygame.locals import *
 

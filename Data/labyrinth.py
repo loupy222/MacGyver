@@ -1,5 +1,5 @@
 from random import randint
-import constants
+import Data.constants
 import pygame
 from pygame.locals import * 
 
@@ -15,7 +15,7 @@ class Labyrinth:
         # Read the file "structure" and save the structure of the labyrinth
         # as a list in structure []
 
-        with open("draw_file",'r') as labyrinth:
+        with open("Data/draw_file",'r') as labyrinth:
             self.structure = [[letter for letter in line if letter != "\n"] for line in labyrinth]
 
 
@@ -47,21 +47,21 @@ class Labyrinth:
         This method loads the images from "constants" and place them on structure
         """
 
-        wall = pygame.image.load(constants.wall_img).convert_alpha()
-        departure = pygame.image.load(constants.departure_img).convert_alpha()
-        tube =pygame.image.load(constants.tube_img).convert_alpha()
-        syringe = pygame.image.load(constants.syringe_img).convert_alpha()
-        needle = pygame.image.load(constants.needle_img).convert_alpha()
-        guardian = pygame.image.load(constants.guardian_img).convert_alpha()
-        poison = pygame.image.load(constants.poison_img).convert_alpha()
+        wall = pygame.image.load(Data.constants.wall_img).convert_alpha()
+        departure = pygame.image.load(Data.constants.departure_img).convert_alpha()
+        tube =pygame.image.load(Data.constants.tube_img).convert_alpha()
+        syringe = pygame.image.load(Data.constants.syringe_img).convert_alpha()
+        needle = pygame.image.load(Data.constants.needle_img).convert_alpha()
+        guardian = pygame.image.load(Data.constants.guardian_img).convert_alpha()
+        poison = pygame.image.load(Data.constants.poison_img).convert_alpha()
         
 
         line = 0
         for ligne in self.structure:
             case = 0
             for sprite in ligne:
-                y = case * constants.sprite_size
-                x = line * constants.sprite_size
+                y = case * Data.constants.sprite_size
+                x = line * Data.constants.sprite_size
                 if sprite == 'w':
                     window.blit(wall, (y,x))
                 elif sprite == 'D':

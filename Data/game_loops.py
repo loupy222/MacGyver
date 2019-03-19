@@ -1,12 +1,11 @@
-import constants
-from labyrinth import Labyrinth
-from hero import Character
-from guardian import Guardian
-from tube import Tube
-from syringe import Syringe
-from poison import Poison
-from needle import Needle
-from pprint import pprint
+import Data.constants
+from Data.labyrinth import Labyrinth
+from Data.hero import Character
+from Data.guardian import Guardian
+from Data.tube import Tube
+from Data.syringe import Syringe
+from Data.poison import Poison
+from Data.needle import Needle
 import pygame
 from pygame.locals import *
 pygame.init()
@@ -24,9 +23,9 @@ class GameLoops:
         """
 
         self.window = pygame.display.set_mode((600, 640))
-        icon = pygame.image.load(constants.icon_img)
+        icon = pygame.image.load(Data.constants.icon_img)
         pygame.display.set_icon(icon)
-        pygame.display.set_caption(constants.Title)
+        pygame.display.set_caption(Data.constants.Title)
         self.sound = pygame.mixer.Sound("sound/Mac.wav")
         self.sound_loose = pygame.mixer.Sound("sound/loose.wav")
         self.sound_win = pygame.mixer.Sound("sound/win.wav")
@@ -35,7 +34,7 @@ class GameLoops:
         """
         Home loop for the welcome window with sound.
         """
-        home_pic = pygame.image.load(constants.home_pic).convert()
+        home_pic = pygame.image.load(Data.constants.home_pic).convert()
 
         home_loop = True
         game_loop = False
@@ -63,9 +62,9 @@ class GameLoops:
         Creation of game structure, characters and items.
         """
 
-        back_ground = pygame.image.load(constants.back_img).convert_alpha()
-        win_img = pygame.image.load(constants.win_img).convert_alpha()
-        loose_img = pygame.image.load(constants.youloose_img).convert_alpha()
+        back_ground = pygame.image.load(Data.constants.back_img).convert_alpha()
+        win_img = pygame.image.load(Data.constants.win_img).convert_alpha()
+        loose_img = pygame.image.load(Data.constants.youloose_img).convert_alpha()
         lab = Labyrinth()
         lab.lab_display(self.window)
         Mac = Character("Mac", lab.structure, lab.chara_s_position())
@@ -83,7 +82,6 @@ class GameLoops:
             self.sound.play(loops=1, maxtime=0, fade_ms=0)
             pygame.time.Clock().tick(60)
             lab.lab_display(self.window)
-            print(Mac.back_pack)
             lab.structure[Mac.case_y][Mac.case_x] = " "
             for event in pygame.event.get():
                 if event.type == QUIT:

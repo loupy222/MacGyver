@@ -1,4 +1,4 @@
-from constants import sprite_size
+from Data.constants import sprite_size
 
 class Tube:
 

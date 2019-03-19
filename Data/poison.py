@@ -1,6 +1,6 @@
-from constants import sprite_size
+from Data.constants import sprite_size
 
-class Syringe:
+class Poison:
 
     def __init__ (self, name, structure, position):
         self.name = name
@@ -8,4 +8,5 @@ class Syringe:
         self.structure = structure
         self.case_y = position[0]
         self.case_x = position[1]
-        self.structure[self.case_y][self.case_x] = "S"
+        self.structure[self.case_y][self.case_x] = "P"
+

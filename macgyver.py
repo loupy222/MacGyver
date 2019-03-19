@@ -6,7 +6,7 @@ MAIN GAME PAGE
 Script Python
 """
 
-from game_loops import GameLoops
+from Data.game_loops import GameLoops
 
 Loop = GameLoops()
 Home = Loop.home_loops()
