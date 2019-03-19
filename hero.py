@@ -68,19 +68,16 @@ class Character:
         
         if self.structure[self.case_y][self.case_x] == "S":            
             self.back_pack += ("syringe",)
-            window.blit(syringe, (240, 560))
  
             print("You find ",self.back_pack, " In your pocket!! NOW!")
 
         if self.structure[self.case_y][self.case_x] == "P":
             self.back_pack += ("poison",)
-            window.blit(poison, (280, 560))
 
             print("You find ",self.back_pack, " In your pocket, IT'S NICE!")
 
         if self.structure[self.case_y][self.case_x] == "N":
             self.back_pack += ("needle",)
-            window.blit(needle, (320, 560))
 
             print("You find ",self.back_pack, " In your pocket, cool!")
 
@@ -88,5 +85,12 @@ class Character:
 
             if elem == "tube" :
                 window.blit(tube, (200, 560))
+            if elem == "needle":
+                window.blit(needle, (320, 560))
+            if elem == "poison":
+                window.blit(poison, (280, 560))
+            if elem == "syringe":
+                window.blit(syringe, (240, 560))
+
 
 

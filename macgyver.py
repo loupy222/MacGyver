@@ -15,6 +15,6 @@ def game ():
     Game
 
 """instancer ici pas sur loops"""
-"""jout display sur fentre pour backpack"""
+"""jout display sur fentre pour backpack"""""" continuer les blit sur nouvelle fenetre backpack"""
 """mettre tous les modules sur dossier avec un __init___.py"""
 
