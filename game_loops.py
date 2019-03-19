@@ -30,7 +30,7 @@ class GameLoops:
         pygame.display.set_caption(constants.Title)
         self.sound = pygame.mixer.Sound("sound/Mac.wav")
         self.sound_loose = pygame.mixer.Sound("sound/loose.wav")
-        self.sound_win = pygame.mixer.sound("sound/win.wav")
+        self.sound_win = pygame.mixer.Sound("sound/win.wav")
     def home_loops (self):
         """
         Home loop for the welcome window
