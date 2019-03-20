@@ -29,6 +29,8 @@ class GameLoops:
         self.sound = pygame.mixer.Sound("sound/Mac.wav")
         self.sound_loose = pygame.mixer.Sound("sound/loose.wav")
         self.sound_win = pygame.mixer.Sound("sound/win.wav")
+        self.game_loop = True
+        self.home_loop = True
 
     def home_loops (self):
         """
@@ -36,25 +38,25 @@ class GameLoops:
         """
         home_pic = pygame.image.load(Data.constants.home_pic).convert()
 
-        home_loop = True
-        game_loop = False
-        while home_loop:
+        self.home_loop = True
+        self.game_loop = False
+        while self.home_loop:
             self.window.blit(home_pic, (0,0))
             self.sound.play()
-            pygame.display.flip()
             for event in pygame.event.get():
                 if event.type == QUIT:
-                    home_loop = False
+                    self.home_loop = False
                     self.sound.stop()
                 elif event.type == KEYDOWN:
                     if event.key == K_ESCAPE:
-                        game_loop = False
-                        home_loop = True
+                        self.game_loop = False
+                        self.home_loop = False
                         pygame.mixer.pause()
                     elif event.key != K_ESCAPE:
-                        home_loop = False
-                        game_loop = True
+                        self.home_loop = False
+                        self.game_loop = True
                         pygame.mixer.pause()
+            pygame.display.flip()
 
     def game_loops (self):
         """
@@ -74,10 +76,9 @@ class GameLoops:
         poison = Poison("Poison", lab.structure, lab.rand_free_tile())
         needle = Needle("Needle", lab.structure, lab.rand_free_tile())
 
-        game_loop = True
+        self.game_loop = True
 
-        while game_loop:
-            pygame.display.flip()
+        while self.game_loop:
             pygame.mixer.unpause()
             self.sound.play(loops=1, maxtime=0, fade_ms=0)
             pygame.time.Clock().tick(60)
@@ -85,10 +86,10 @@ class GameLoops:
             lab.structure[Mac.case_y][Mac.case_x] = " "
             for event in pygame.event.get():
                 if event.type == QUIT:
-                    game_loop = False
+                    self.game_loop = False
                 elif event.type == KEYDOWN:
                     if event.key == K_ESCAPE:
-                        game_loop = False
+                        self.game_loop = False
                     elif event.key == K_DOWN:
                         Mac.moove('right')
                     elif event.key == K_UP:
@@ -97,11 +98,12 @@ class GameLoops:
                         Mac.moove('up')
                     elif event.key == K_RIGHT:
                         Mac.moove('down')
+            pygame.display.flip()
 
             if lab.structure[Mac.case_y][Mac.case_x] == "G":
                 if len(Mac.back_pack) == 4:
                     self.sound.stop()
-                    game_loop = False
+                    self.game_loop = False
                     win = True
                     while win:
                         self.sound_win.play()
@@ -116,7 +118,7 @@ class GameLoops:
 
                 if len(Mac.back_pack) != 4:
                     self.sound.stop()
-                    game_loop = False
+                    self.game_loop = False
                     loose = True
                     while loose:
                         self.sound_loose.play()
@@ -124,7 +126,7 @@ class GameLoops:
                             if event.type == QUIT:
                                 loose = False
                             elif event.type == KEYDOWN:
-                                if event.key != K_ESCAPE:
+                                if event.key == K_ESCAPE:
                                     loose = False
                         self.window.blit(loose_img, (0,0))
                         pygame.display.flip()
@@ -136,3 +138,4 @@ class GameLoops:
             self.window.blit(Mac.picture, (Mac.x, Mac.y))
             Mac.catch_item(self.window)
             lab.structure[Mac.case_y][Mac.case_x] = "M"
+            pygame.display.flip()
