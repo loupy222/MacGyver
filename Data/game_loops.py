@@ -111,7 +111,7 @@ class GameLoops:
                             if event.type == QUIT:
                                 win = False
                             elif event.type == KEYDOWN:
-                                if event.key != K_ESCAPE:
+                                if event.key == K_ESCAPE:
                                     win = False
                         self.window.blit(win_img, (0,0))
                         pygame.display.flip()
