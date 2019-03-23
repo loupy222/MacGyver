@@ -130,8 +130,6 @@ class GameLoops:
                                     loose = False
                         self.window.blit(loose_img, (0,0))
                         pygame.display.flip()
-
-                    print("YOU LOOSE! THE GUARDIAN KILL YOU!")
     
             self.window.blit(back_ground, (0,0))
             lab.lab_display(self.window)
