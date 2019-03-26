@@ -8,11 +8,13 @@ Script Python
 
 from Data.game_loops import GameLoops
 
-Loop = GameLoops()
-Home = Loop.home_loops()
-Game = Loop.game_loops()
+LOOP = GameLoops()
+HOME = LOOP.home_loops()
+GAME = LOOP.game_loops()
 
 def game():
-
-    Home
-    Game
+    """
+     Game fonction
+    """
+    HOME
+    GAME
