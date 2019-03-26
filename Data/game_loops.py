@@ -1,22 +1,19 @@
+import pygame
+from pygame.locals import *
 import Data.constants
 from Data.labyrinth import Labyrinth
 from Data.hero import Character
 from Data.guardian import Guardian
-from Data.tube import Tube
-from Data.syringe import Syringe
-from Data.poison import Poison
-from Data.needle import Needle
-import pygame
-from pygame.locals import *
-pygame.init()
+from Data.item import Item
 
+pygame.init()
 
 class GameLoops:
     """
     Creation of all loops game
     """
 
-    def __init__ (self):
+    def __init__(self):
 
         """
         Creation of the main window and game sounds.
@@ -32,7 +29,7 @@ class GameLoops:
         self.game_loop = True
         self.home_loop = True
 
-    def home_loops (self):
+    def home_loops(self):
         """
         Home loop for the welcome window with sound.
         """
@@ -41,7 +38,7 @@ class GameLoops:
         self.home_loop = True
         self.game_loop = False
         while self.home_loop:
-            self.window.blit(home_pic, (0,0))
+            self.window.blit(home_pic, (0, 0))
             self.sound.play()
             for event in pygame.event.get():
                 if event.type == QUIT:
@@ -58,12 +55,11 @@ class GameLoops:
                         pygame.mixer.pause()
             pygame.display.flip()
 
-    def game_loops (self):
+    def game_loops(self):
         """
         Main game loop
         Creation of game structure, characters and items.
         """
-
         back_ground = pygame.image.load(Data.constants.back_img).convert_alpha()
         win_img = pygame.image.load(Data.constants.win_img).convert_alpha()
         loose_img = pygame.image.load(Data.constants.youloose_img).convert_alpha()
@@ -71,10 +67,10 @@ class GameLoops:
         lab.lab_display(self.window)
         Mac = Character("Mac", lab.structure, lab.chara_s_position())
         guardian = Guardian("Guardian", lab.structure, lab.guardian_s_position())
-        tube = Tube("Tube", lab.structure, lab.rand_free_tile())
-        syringe = Syringe("Syringe", lab.structure, lab.rand_free_tile())
-        poison = Poison("Poison", lab.structure, lab.rand_free_tile())
-        needle = Needle("Needle", lab.structure, lab.rand_free_tile())
+        tube = Item("Tube", lab.structure, lab.rand_free_tile())
+        syringe = Item("Syringe", lab.structure, lab.rand_free_tile())
+        poison = Item("Poison", lab.structure, lab.rand_free_tile())
+        needle = Item("Needle", lab.structure, lab.rand_free_tile())
 
         self.game_loop = True
 
@@ -113,7 +109,7 @@ class GameLoops:
                             elif event.type == KEYDOWN:
                                 if event.key == K_ESCAPE:
                                     win = False
-                        self.window.blit(win_img, (0,0))
+                        self.window.blit(win_img, (0, 0))
                         pygame.display.flip()
 
                 if len(Mac.back_pack) != 4:
@@ -128,10 +124,10 @@ class GameLoops:
                             elif event.type == KEYDOWN:
                                 if event.key == K_ESCAPE:
                                     loose = False
-                        self.window.blit(loose_img, (0,0))
+                        self.window.blit(loose_img, (0, 0))
                         pygame.display.flip()
     
-            self.window.blit(back_ground, (0,0))
+            self.window.blit(back_ground, (0, 0))
             lab.lab_display(self.window)
             self.window.blit(Mac.picture, (Mac.x, Mac.y))
             Mac.catch_item(self.window)

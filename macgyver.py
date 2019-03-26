@@ -12,7 +12,7 @@ Loop = GameLoops()
 Home = Loop.home_loops()
 Game = Loop.game_loops()
 
-def game ():
+def game():
 
     Home
     Game

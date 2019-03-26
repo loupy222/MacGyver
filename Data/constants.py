@@ -1,13 +1,9 @@
-
-
 """GAME Constants"""
-
 numb_sprites_side = 15
 sprite_size = 40
 window_side_size = 600  #(numb_sprites_side * sprite_size) 
 
 """Pictures"""
-
 icon_img = "pics/icon_img.jpg"
 home_pic = "pics/home.jpg"
 wall_img = "pics/wall.png"
@@ -28,5 +24,4 @@ yes_img = "pics/yes.png"
 cool_img = "pics/cool.png"
 
 """Sentences"""
-
 Title = "MACGYVER SCAPES"

@@ -1,15 +1,15 @@
-class Guardian:
+class Item:
     """
-    Class to create the "Guardian" charater whith name and
-    initial position.
+    Class of items
     """
     def __init__(self, name, structure, position):
         """
-        Creation of Guardan
+        Creation of items
         """
-        self.nane = name
+        self.name = name
         self.position = position
         self.structure = structure
         self.case_y = position[0]
         self.case_x = position[1]
-        self.structure[self.case_y][self.case_x] = "G"
+        self.structure[self.case_y][self.case_x] = name[0]
+        

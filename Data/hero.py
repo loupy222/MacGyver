@@ -1,14 +1,14 @@
-from Data.constants import numb_sprites_side, sprite_size, mac_img, cool_img, yeah_img, yes_img, syringe_img, tube_img, poison_img, needle_img, backpack_img, full_img
 import pygame
 from pygame.locals import *
 
+from Data.constants import numb_sprites_side, sprite_size, mac_img, cool_img, yeah_img, yes_img, syringe_img, tube_img, poison_img, needle_img, backpack_img, full_img
 
 class Character:
     """
     Class to create the characters whith name,
     initial position, valid mooves and catch items.
-    """ 
-
+    """
+     
     def __init__(self, name, structure, position):
         self.nane = name
         self.position = position
@@ -31,7 +31,7 @@ class Character:
                     self.y = self.case_y * sprite_size            
   
         if direction == "left":
-            if self.case_y >0:
+            if self.case_y > 0:
                 if self.structure[self.case_y -1][self.case_x] != "w":
                     self.case_y -= 1
                     self.y = self.case_y * sprite_size
@@ -50,7 +50,7 @@ class Character:
                     self.x = self.case_x * sprite_size         
 
     def catch_item(self, window):
-        tube =pygame.image.load(tube_img).convert_alpha()
+        tube = pygame.image.load(tube_img).convert_alpha()
         syringe = pygame.image.load(syringe_img).convert_alpha()
         needle = pygame.image.load(needle_img).convert_alpha()
         poison = pygame.image.load(poison_img).convert_alpha()
@@ -75,7 +75,7 @@ class Character:
 
         for elem in self.back_pack:
 
-            if elem == "tube" :
+            if elem == "tube":
                 window.blit(tube, (380, 600))
             if elem == "needle":
                 window.blit(needle, (420, 600))
